@@ -1,3 +1,7 @@
+pyproject.toml
+.python-version
+uv.lock
+
 *.DS_Store
 */.DS_Store
 
