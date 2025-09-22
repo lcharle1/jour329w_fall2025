@@ -18,7 +18,7 @@ What we're going to do is to explore those tags as data and also test out the ab
 
 ### Basic Tag Exploration
 
-Keep the `cns_tags.md` file in your directory open for editing. In the shared `data` directory, you'll find a file called `tags.json`. Open that up in the editor. In your `notes.md` file, describe what the data is and how it's organized. Can you tell what the most popular tags are? How would you describe determining which were the most common tags?
+Keep the `notes.md` file in your directory open for editing. In the shared `data` directory, you'll find a file called `tags.json`. Open that up in the editor. In your `notes.md` file, describe what the data is and how it's organized. Can you tell what the most popular tags are? How would you describe determining which were the most common tags?
 
 One of the tools we've installed, [sqlite-utils](https://sqlite-utils.datasette.io/en/stable/index.html), gives us the ability [to ask questions of data contained in CSV and JSON files](https://sqlite-utils.datasette.io/en/stable/cli.html#running-queries-directly-against-csv-or-json). Follow along as we do this with the tags.
 
