@@ -16,7 +16,6 @@ What we're going to do is to explore those tags as data and also test out the ab
 6. Do cd .. twice to get back to the main directory (/workspaces/jour329w_fall2025)
 7. In the Terminal, do the git add, commit, pull and push your changes as described in the `setup.md` file.
 
-
 ### One-Time Setup
 
 In the Terminal, do this:
