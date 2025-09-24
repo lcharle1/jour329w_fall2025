@@ -1,0 +1,6 @@
+Laura Charleston 9/24/2025
+
+# cns_embeddings
+
+Describe your initial impressions of the visualization of the CNS stories. Click on them and see if you can tell how they are grouped together. Describe some of the larger groupings. Does this help you understand CNS coverage better? What would be more useful?
+- The visualization is not the best and most comprehendable one ever but without the multidimensional graph, it is not the worst one ever. From the largest grouping, "mainland", you can tell the different sections. South of mainland, and the southern islands, are sports related. Southeast, more far out, there is an island about schol boards. Moving up, center of the mainland, you have Maryland/College Park/School related topics. West of it there is more bill reglated topics. East is bills too but also care (in a health or service sense). The more north you go, the more political, election, and voting related topics you get. There is an outlier - far out island - to the left, is particular because it has a variety of unrelated topics. 
