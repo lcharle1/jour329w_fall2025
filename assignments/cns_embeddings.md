@@ -31,7 +31,7 @@ git merge upstream/main
 
 ### Explore
 
-In `notes.md`, describe your initial impressions of the visualization of the CNS stories. Click on them and see if you can tell how they are grouped together. Describe some of the larger groupings. Does this help you understand CNS coverage better? What would be more useful?
+In `notes.md`, gt
 
 When you are finished, add, commit and push your changes:
 
