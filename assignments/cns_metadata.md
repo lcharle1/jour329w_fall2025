@@ -2,6 +2,15 @@
 
 Building on your work with CNS tags, this assignment will have you generate and compare metadata for news stories using LLMs. You'll extract not just topics, but also people, organizations, locations and other structured information that could be useful for newsrooms. You'll also have the LLMs make some subjective choices.
 
+### Setup
+
+Update from upstream: 
+
+```{bash}
+git fetch upstream
+git merge upstream/main
+```
+
 ### Getting Started
 
 In your class repository, open a codespace and do the following:
@@ -46,7 +55,7 @@ uv run llm keys set anthropic
 and pasting in the key I will give to each of you.
 
 ```{bash}
-uv run python -m newspaper --url=YOUR_URL -of=text | llm -m groq/moonshotai/kimi-k2-instruct-0905 "Extract structured metadata from this news story and return as JSON with these exact fields:
+uv run python -m newspaper --url=YOUR_URL -of=text | uv run llm -m groq/moonshotai/kimi-k2-instruct-0905 "Extract structured metadata from this news story and return as JSON with these exact fields:
 {
   \"url\": \"the url of the story\",
   \"people\": [\"list of up to 3 people with their titles/roles\"],
@@ -66,7 +75,7 @@ Be sure to include the commands you run and the responses in your `notes.md` fil
 
 Compare your own metadata to those created by the LLMs, both in terms of quality but also noting differences. Did the LLMs produce responses that you didn't? Are any of those differences semantically the same? What changes could you make to the llm commands to improve the responses? Try doing that and check the results - did it improve things? How?
 
-What would be the potential issues of repeating this with 50 or 500 stories? How could you improve the consistency of the results? Do not skim on details here, and feel free to speculate or propose ideas even if you don't know if they would work.
+What would be the potential issues of repeating this with 50 or 500 stories? How could you improve the consistency of the results? Do not skimp on details here, and feel free to speculate or propose ideas even if you don't know if they would work.
 
 Finally, what would make this entire process easier, particularly comparing the responses and revising the prompts? If you had to show your work to someone else, what would make that easier?
 

@@ -1,0 +1,397 @@
+#!/usr/bin/env python3
+"""
+Script to process CNS Maryland posts and generate summaries using LLM.
+Requires: uv install llm
+"""
+
+import json
+import sys
+import time
+import subprocess
+import csv
+import argparse
+from pathlib import Path
+from typing import List, Dict, Any
+import re
+
+
+def load_topics(topics_file: Path) -> List[str]:
+    """Load topics from topics.csv file."""
+    try:
+        topics = []
+        with open(topics_file, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                topic = row['Topic'].strip()  # Updated column name
+                if topic:
+                    topics.append(topic)
+        
+        # Add "General news" as fallback option if not in CSV
+        if "General news" not in topics:
+            topics.append("General news")
+            
+        return topics
+    except FileNotFoundError:
+        print(f"Warning: Topics file '{topics_file}' not found.")
+        raise
+
+
+def clean_content(content: str) -> str:
+    """
+    Clean the content by removing HTML tags and extra whitespace.
+    
+    Args:
+        content (str): Raw content from the post
+        
+    Returns:
+        str: Cleaned content
+    """
+    # Remove HTML tags
+    content = re.sub(r'<[^>]+>', '', content)
+    # Remove shortcode tags like [vc_row], [/vc_column_text], etc.
+    content = re.sub(r'\[[^\]]+\]', '', content)
+    # Replace multiple whitespace with single space
+    content = re.sub(r'\s+', ' ', content)
+    # Remove extra newlines and tabs
+    content = content.replace('\n', ' ').replace('\t', ' ')
+    return content.strip()
+
+
+def classify_topic(title: str, content: str, topics: List[str]) -> str:
+    """Classify a story into one of the predefined topics using LLM."""
+    try:
+        cleaned_content = clean_content(content)
+        
+        # Truncate content if too long
+        max_content_length = 1500
+        if len(cleaned_content) > max_content_length:
+            cleaned_content = cleaned_content[:max_content_length] + "..."
+        
+        # Create topics list for the prompt (excluding "General news" as it's the default)
+        topic_options = [topic for topic in topics if topic != "General news"]
+        topics_str = "\n".join([f"- {topic}" for topic in topic_options])
+        
+        prompt = f"""Classify this news article into exactly ONE of the following topics. If none of the specific topics fit well, respond with "General news".
+
+Available topics:
+{topics_str}
+- General news
+
+Title: {title}
+
+Content: {cleaned_content}
+
+Respond with only the topic name (exactly as listed above):"""
+        
+        result = subprocess.run([
+            'llm', '-m', 'qwen3:32b', '-o', 'think', 'false', prompt
+        ], capture_output=True, text=True, timeout=30)
+        
+        if result.returncode == 0:
+            classified_topic = result.stdout.strip()
+            
+            # Validate the response is one of our topics
+            if classified_topic in topics:
+                return classified_topic
+            else:
+                # If the LLM returned something not in our list, default to General news
+                return "General news"
+        else:
+            return "General news"
+    
+    except (subprocess.TimeoutExpired, Exception):
+        return "General news"
+
+
+def generate_tags(title: str, content: str, topic: str, summary: str) -> List[str]:
+    """Generate up to 5 tags for a story, focusing on people, places, and ideas."""
+    try:
+        cleaned_content = clean_content(content)
+        
+        # Truncate content if too long
+        max_content_length = 1500
+        if len(cleaned_content) > max_content_length:
+            cleaned_content = cleaned_content[:max_content_length] + "..."
+        
+        prompt = f"""Generate up to 5 relevant tags for this news article. Each tag must be:
+- No more than 2 words
+- Focus on prominent people, places, and key ideas mentioned in the story
+- Do NOT use words similar to or related to the topic "{topic}" - avoid the topic entirely
+- Be broad enough to be useful (avoid overly specific or niche terms)
+- Only generate tags if they are meaningful and relevant
+
+Focus on specific names, locations, organizations, and concrete concepts mentioned in the story.
+
+If there aren't 5 meaningful tags, generate fewer. Quality over quantity.
+
+Title: {title}
+
+Summary: {summary}
+
+Content: {cleaned_content}
+
+Respond with only the tags, one per line, each tag being 1-2 words maximum:"""
+        
+        result = subprocess.run([
+            'llm', '-m', 'qwen3:32b', '-o', 'think', 'false', prompt
+        ], capture_output=True, text=True, timeout=30)
+        
+        if result.returncode == 0:
+            raw_tags = result.stdout.strip().split('\n')
+            
+            # Process and validate tags
+            tags = []
+            topic_words = set(word.lower() for word in topic.split())
+            
+            for tag in raw_tags:
+                # Clean the tag
+                tag = tag.strip().strip('-').strip('•').strip('*').strip()
+                
+                # Skip empty tags, numbers, or generic placeholder tags
+                if not tag or tag.isdigit() or tag.lower().startswith('tag '):
+                    continue
+                
+                # Ensure tag is no more than 2 words
+                words = tag.split()
+                if len(words) <= 2:
+                    # Check if tag is similar to topic - avoid any overlap in words
+                    tag_words = set(word.lower() for word in words)
+                    if not tag_words.intersection(topic_words):
+                        # Additional check for semantic similarity
+                        tag_lower = tag.lower()
+                        topic_lower = topic.lower()
+                        
+                        # Skip if tag contains topic words or vice versa
+                        skip_tag = False
+                        for topic_word in topic_words:
+                            if len(topic_word) > 3:  # Only check meaningful words
+                                if topic_word in tag_lower or any(topic_word in tag_word for tag_word in tag_words):
+                                    skip_tag = True
+                                    break
+                        
+                        if not skip_tag:
+                            tags.append(tag)
+                
+                # Stop if we have 5 tags
+                if len(tags) >= 5:
+                    break
+            
+            return tags  # Return only the actual tags generated
+        else:
+            return []
+    
+    except (subprocess.TimeoutExpired, Exception):
+        return []
+
+
+def generate_summary(title: str, content: str) -> str:
+    """Generate a summary using the LLM command line with Ollama."""
+    cleaned_content = clean_content(content)
+    
+    # Truncate content if too long to avoid token limits
+    max_content_length = 2000
+    if len(cleaned_content) > max_content_length:
+        cleaned_content = cleaned_content[:max_content_length] + "..."
+    
+    prompt = f"""You must provide ONLY the final summary without showing any thinking process or reasoning steps. Summarize the following news article in exactly 2 sentences or fewer:
+
+Title: {title}
+
+Content: {cleaned_content}
+
+Final summary (2 sentences maximum):"""
+    
+    try:
+        # Use subprocess to call llm with the think=false option
+        result = subprocess.run([
+            'llm', '-m', 'qwen3:32b', '-o', 'think', 'false', prompt
+        ], capture_output=True, text=True, timeout=60)
+        
+        if result.returncode == 0:
+            summary = result.stdout.strip()
+            
+            # Ensure summary is not too long and clean up any extra formatting
+            sentences = summary.split('. ')
+            if len(sentences) > 2:
+                summary = '. '.join(sentences[:2])
+                if not summary.endswith('.'):
+                    summary += '.'
+            
+            return summary
+        else:
+            return f"Error: {result.stderr.strip()}"
+    
+    except subprocess.TimeoutExpired:
+        return "Error: Summary generation timed out"
+    except Exception as e:
+        return f"Error generating summary: {str(e)}"
+
+
+def process_stories(input_file: Path, output_file: Path, max_stories: int = None) -> None:
+    """
+    Process all stories in the JSON file and generate summaries, topics, and tags.
+    
+    Args:
+        input_file (Path): Path to input JSON file
+        output_file (Path): Path to output JSON file
+        max_stories (int, optional): Maximum number of stories to process. If None, process all stories.
+    """
+    try:
+        # Load topics
+        topics_file = input_file.parent.parent / 'data' / 'topics.csv'
+        topics = load_topics(topics_file)
+        print(f"Loaded {len(topics)} topics")
+        
+        # Read the input JSON file
+        print(f"Reading stories from: {input_file}")
+        with open(input_file, 'r', encoding='utf-8') as f:
+            stories = json.load(f)
+        
+        # Limit stories if max_stories is specified
+        if max_stories is not None:
+            stories = stories[:max_stories]
+            print(f"Limited to {len(stories)} stories for testing")
+        
+        print(f"Found {len(stories)} stories to process")
+        
+        # Process each story
+        summaries = []
+        
+        for i, story in enumerate(stories, 1):
+            title = story.get('title', 'Untitled')
+            print(f"Processing story {i}/{len(stories)}: {title}")
+            
+            try:
+                # Classify topic
+                topic = classify_topic(
+                    story.get('title', ''),
+                    story.get('content', ''),
+                    topics
+                )
+                
+                # Generate summary
+                summary = generate_summary(
+                    story.get('title', ''), 
+                    story.get('content', '')
+                )
+                
+                # Generate tags
+                tags = generate_tags(
+                    story.get('title', ''),
+                    story.get('content', ''),
+                    topic,
+                    summary
+                )
+                
+                # Create summary object with topic and tags
+                summary_obj = {
+                    "link": story.get('link', ''),
+                    "title": story.get('title', ''),
+                    "topic": topic,
+                    "tags": tags,
+                    "summary": summary
+                }
+                
+                summaries.append(summary_obj)
+                
+                # Add a small delay to be respectful to the model
+                time.sleep(0.1)
+                
+            except Exception as e:
+                print(f"Error processing story {i}: {e}")
+                # Add a placeholder entry for failed summaries
+                summary_obj = {
+                    "link": story.get('link', ''),
+                    "title": story.get('title', ''),
+                    "topic": "General news",
+                    "tags": [],
+                    "summary": f"Error generating summary: {str(e)}"
+                }
+                summaries.append(summary_obj)
+            
+            # Save progress periodically (every 50 stories)
+            if i % 50 == 0:
+                print(f"Saving progress... ({i} stories processed)")
+                with open(output_file, 'w', encoding='utf-8') as f:
+                    json.dump(summaries, f, indent=2, ensure_ascii=False)
+        
+        # Save final results
+        print(f"Saving final results to: {output_file}")
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(summaries, f, indent=2, ensure_ascii=False)
+        
+        print(f"Successfully processed {len(summaries)} stories!")
+        print(f"Results saved to: {output_file}")
+        
+    except FileNotFoundError:
+        print(f"Error: Input file '{input_file}' not found.")
+        sys.exit(1)
+    except json.JSONDecodeError as e:
+        print(f"Error: Invalid JSON format in '{input_file}': {e}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Error: {e}")
+        sys.exit(1)
+
+
+def main():
+    """Main function to run the story processing."""
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='Process CNS Maryland posts and generate summaries using LLM')
+    parser.add_argument('-test', '--test', action='store_true', 
+                       help='Test mode: process only 5 stories instead of all stories')
+    args = parser.parse_args()
+    
+    # Set up file paths
+    script_dir = Path(__file__).parent
+    input_file = script_dir.parent / 'data' / 'cns_maryland_posts_stripped.json'
+    output_file = script_dir.parent / 'data' / 'story_summaries_test.json'
+    
+    # Set max_stories based on test flag
+    max_stories = 5 if args.test else None
+    
+    # Check if input file exists
+    if not input_file.exists():
+        print(f"Error: Input file '{input_file}' not found.")
+        print("Please ensure the cns_maryland_posts_stripped.json file exists in the data/ directory.")
+        sys.exit(1)
+    
+    # Check if llm command is available
+    try:
+        import subprocess
+        result = subprocess.run(['llm', '--version'], capture_output=True)
+        if result.returncode != 0:
+            raise FileNotFoundError
+    except FileNotFoundError:
+        print("Error: 'llm' command not found. Please install it with: pip install llm")
+        sys.exit(1)
+    
+    print("CNS Maryland Story Processing System")
+    print("=" * 50)
+    print(f"Input file: {input_file}")
+    print(f"Output file: {output_file}")
+    print(f"Model: qwen3:32b (via Ollama command-line with think=false)")
+    print("Features: Summarization, Topic Classification, Tag Generation")
+    if args.test:
+        print("Mode: TEST (processing only 5 stories)")
+    else:
+        print("Mode: FULL (processing all stories)")
+    print()
+    
+    # Confirm before starting
+    mode_text = "5 stories (test mode)" if args.test else "all stories"
+    response = input(f"Do you want to proceed with processing {mode_text}? This may take a while... (y/N): ")
+    if response.lower() not in ['y', 'yes']:
+        print("Operation cancelled.")
+        sys.exit(0)
+    
+    # Process the stories
+    start_time = time.time()
+    process_stories(input_file, output_file, max_stories)
+    end_time = time.time()
+    
+    print(f"\nProcessing completed in {end_time - start_time:.2f} seconds")
+
+
+if __name__ == "__main__":
+    main()
