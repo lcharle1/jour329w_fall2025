@@ -26,7 +26,6 @@ Before making changes, you need to understand what CNS actually covers:
 #### 1. Browse CNS Stories
 - Go to [cnsmaryland.org](https://cnsmaryland.org) 
 - Look through recent stories (from the last year or two)
-- Click through to older stories in different sections
 - Pay attention to:
   - What types of stories appear most frequently?
   - What Maryland-specific topics come up repeatedly?
@@ -44,10 +43,9 @@ Before making changes, you need to understand what CNS actually covers:
 
 #### 3. Document Your Observations
 In your `notes.md`, describe:
-- The most common story types you observed
+- Current topics that seem too broad or too narrow
+- Topics that seem to overlap significantly
 - Any Maryland-specific topics that seem important
-- Current topic categories that seem too broad or too narrow
-- Categories that seem to overlap significantly
 
 ### Refine the Topics
 
@@ -94,12 +92,12 @@ Copy this list into your `notes.md` file and work with it there:
 35. Baltimore
 ```
 
-Some questions:
+Some questions to consider:
 
-How often does CNS cover this topic?
 Is the topic definition clear and distinct?
 Does this topic overlap significantly with others?
 Is this topic important for Maryland coverage?
+How often does CNS cover this topic?
 Could this be combined with another topic?
 
 ### Your Topics
@@ -109,25 +107,6 @@ In your `notes.md` file, create a section called "Revised Topic List" with:
 1. Your new consolidated list (aim for no more than 35 topics, and ideally less)
 2. Brief descriptions for any new or significantly changed topics
 3. A clear explanation of what you combined and why
-
-Write a detailed explanation section covering:
-
-#### What You Combined and Why
-For each consolidation, explain:
-- Which original topics you merged
-- Why they belonged together
-- How the new category is more coherent
-- What you'll call the new combined category
-
-#### What You Kept Separate and Why
-For topics you left alone:
-- Why they deserve their own category
-- How frequently CNS covers these topics
-- Why they shouldn't be combined with others
-
-#### Maryland-Specific Decisions
-- Decisions about Baltimore, Chesapeake Bay, or other Maryland topics
-- Whether local vs. state government coverage patterns influenced your choices
 
 **Remember:** The goal is to make the topic system work better for CNS, not to create a perfect classification system. If you use an LLM or Copilot to help with this, be sure to copy your conversation into the `notes.md` file. If you use Copilot, change "Agent" to "Ask".
 
