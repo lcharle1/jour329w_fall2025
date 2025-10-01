@@ -57,7 +57,7 @@ Would you like help checking the fetch path or updating the code to handle error
 
 
 ### Reflection
-1.  The copilot incorporated all of my recommended features and filters to narrow down tags but it did not work in populating tags after every search. I tried asking copilot for suggestions and tried improving it myself but it did not work. I tried to restart from scratch but that did not work either and stopped before I over used the chat before the end of the month. I wish I started off with a simple request and then aded the additional features. Right now I am struggling to have the html show a list of tags. 
+1.  The copilot incorporated all of my recommended features and filters to narrow down tags but it did not work in populating tags after every search. I tried asking copilot for suggestions and tried improving it myself but it did not work. I tried to restart from scratch but that did not work either and stopped before I over used the chat before the end of the month. I wish I started off with a simple request and then aded the additional features. Right now I am struggling to have the html show a list of tags. Starting with a lot of requests in the beginning makes it difficult to find where I went wrong. 
 
 
 
@@ -223,4 +223,3 @@ You can now use all these features to browse and filter CNS tags. Let me know if
 Made changes.
 
 
-### Extra Credit
