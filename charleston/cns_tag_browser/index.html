@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CNS Tag Browser</title>
+        <script src="https://unpkg.com/compromise"></script>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 2em; }
+            .filter-group { margin-bottom: 1em; }
+            label { margin-right: 0.5em; }
+            input, select { margin-right: 1em; }
+            .tag-list { margin-top: 2em; }
+            .tag-item { margin-bottom: 0.5em; }
+        </style>
+    </head>
+    <body>
+        <h1>CNS Tag Browser</h1>
+        <div class="filter-group">
+            <label for="tagSearch">Search Tags:</label>
+            <input type="text" id="tagSearch" placeholder="Type to search tags..." oninput="searchTags()">
+            <label for="author">Author:</label>
+            <input type="text" id="author" placeholder="Author name">
+            <label for="dateStart">Date Start:</label>
+            <input type="date" id="dateStart">
+            <label for="dateEnd">Date End:</label>
+            <input type="date" id="dateEnd">
+            <label for="journalismType">Type of Journalism:</label>
+            <input type="text" id="journalismType" placeholder="e.g. Culture, Politics">
+            <label for="geography">Geography:</label>
+            <input type="text" id="geography" placeholder="City/Town/County/State/National/International">
+            <button onclick="applyFilters()">Apply Filters</button>
+        </div>
+        <div class="tag-list" id="tagList"></div>
+        <script>
+        let tags = [];
+        // Load tags.json
+        fetch('../../data/tags.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                tags = data;
+                displayTags(tags);
+            })
+            .catch(error => {
+                const tagList = document.getElementById('tagList');
+                tagList.innerHTML = `<p style='color:red;'>Failed to load tags: ${error.message}</p>`;
+            });
+
+        // Helper to get stories for a tag (using the link field)
+        function getStoriesForTag(tag) {
+            // For demo, just link to the tag page
+            return `<a class=\"tag-link\" href=\"${tag.link}\" target=\"_blank\">View stories for this tag</a>`;
+        }
+
+        function searchTags() {
+            const searchValue = document.getElementById('tagSearch').value.trim().toLowerCase();
+            let filtered = tags.filter(tag => {
+                return tag.name && tag.name.toLowerCase().includes(searchValue);
+            });
+            displayTags(filtered);
+        }
+
+        function applyFilters() {
+            const author = document.getElementById('author').value.trim().toLowerCase();
+            const dateStart = document.getElementById('dateStart').value;
+            const dateEnd = document.getElementById('dateEnd').value;
+            const journalismType = document.getElementById('journalismType').value.trim().toLowerCase();
+            const geography = document.getElementById('geography').value.trim().toLowerCase();
+            let filtered = tags.filter(tag => {
+                let match = true;
+                if (author && tag.author) {
+                    match = match && tag.author.toLowerCase().includes(author);
+                }
+                if (dateStart && tag.date) {
+                    match = match && (tag.date >= dateStart);
+                }
+                if (dateEnd && tag.date) {
+                    match = match && (tag.date <= dateEnd);
+                }
+                if (journalismType && tag.journalismType) {
+                    match = match && tag.journalismType.toLowerCase().includes(journalismType);
+                }
+                if (geography && tag.geography) {
+                    match = match && tag.geography.toLowerCase().includes(geography);
+                }
+                return match;
+            });
+            displayTags(filtered);
+        }
+
+        function displayTags(tagArray) {
+            const tagList = document.getElementById('tagList');
+            tagList.innerHTML = '';
+            if (tagArray.length === 0) {
+                tagList.innerHTML = '<p>No tags found.</p>';
+                return;
+            }
+            tagArray.forEach(tag => {
+                let normalizedTag = tag.name ? tag.name : '';
+                tagList.innerHTML += `<div class=\"tag-item\">\n                <strong>${normalizedTag}</strong> <br>\n                Tag Count: ${tag.count || ''}<br>\n                ${getStoriesForTag(tag)}\n            </div>`;
+            });
+        }
+        </script>
+    </body>
+    </html>
