@@ -1,0 +1,9 @@
+{
+  "plugins": {
+    "datasette-embeddings": {
+      "api_key": {
+        "$env": "DATASETTE_SECRETS_OPENAI_API_KEY"
+      }
+    }
+  }
+}
