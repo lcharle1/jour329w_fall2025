@@ -15,20 +15,21 @@ from typing import List, Dict, Any
 import re
 
 
-def load_topics(topics_file: Path) -> List[str]:
-    """Load topics from topics.csv file."""
+def load_topics(topics_file: Path) -> Dict[str, str]:
+    """Load topics and descriptions from topics.csv file."""
     try:
-        topics = []
+        topics = {}
         with open(topics_file, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                topic = row['Topic'].strip()  # Updated column name
-                if topic:
-                    topics.append(topic)
+                topic = row['Topic'].strip()
+                description = row['Description'].strip()
+                if topic and description:
+                    topics[topic] = description
         
         # Add "General news" as fallback option if not in CSV
-        if "General news" not in topics:
-            topics.append("General news")
+#        if "General news" not in topics:
+#            topics["General news"] = "Stories that don't fit clearly into other specific categories"
             
         return topics
     except FileNotFoundError:
@@ -57,7 +58,7 @@ def clean_content(content: str) -> str:
     return content.strip()
 
 
-def classify_topic(title: str, content: str, topics: List[str]) -> str:
+def classify_topic(title: str, content: str, topics: Dict[str, str], model: str = 'gpt-4o-mini') -> str:
     """Classify a story into one of the predefined topics using LLM."""
     try:
         cleaned_content = clean_content(content)
@@ -67,24 +68,25 @@ def classify_topic(title: str, content: str, topics: List[str]) -> str:
         if len(cleaned_content) > max_content_length:
             cleaned_content = cleaned_content[:max_content_length] + "..."
         
-        # Create topics list for the prompt (excluding "General news" as it's the default)
-        topic_options = [topic for topic in topics if topic != "General news"]
-        topics_str = "\n".join([f"- {topic}" for topic in topic_options])
+        # Create topics list for the prompt with descriptions (excluding "General news" as it's the default)
+        topic_options = [(topic, desc) for topic, desc in topics.items() if topic != "General news"]
+        topics_str = "\n".join([f"- {topic}: {description}" for topic, description in topic_options])
         
-        prompt = f"""Classify this news article into exactly ONE of the following topics. If none of the specific topics fit well, respond with "General news".
+        prompt = f"""Classify this news article into exactly ONE of the following topics based on the topic descriptions. Choose the topic that best matches the primary focus of the story.
 
-Available topics:
+Available topics and their descriptions:
 {topics_str}
-- General news
 
 Title: {title}
 
 Content: {cleaned_content}
 
+Consider the main focus and subject matter of the story. Look at what the story is primarily about, not just mentions or minor details.
+
 Respond with only the topic name (exactly as listed above):"""
         
         result = subprocess.run([
-            'llm', '-m', 'qwen3:32b', '-o', 'think', 'false', prompt
+            'llm', '-m', 'claude-3.5-haiku', prompt
         ], capture_output=True, text=True, timeout=30)
         
         if result.returncode == 0:
@@ -95,15 +97,15 @@ Respond with only the topic name (exactly as listed above):"""
                 return classified_topic
             else:
                 # If the LLM returned something not in our list, default to General news
-                return "General news"
+                return "No topic"
         else:
-            return "General news"
+            return "No topic"
     
     except (subprocess.TimeoutExpired, Exception):
-        return "General news"
+        return "No topic"
 
 
-def generate_tags(title: str, content: str, topic: str, summary: str) -> List[str]:
+def generate_tags(title: str, content: str, topic: str, summary: str, model: str = 'gpt-4o-mini') -> List[str]:
     """Generate up to 5 tags for a story, focusing on people, places, and ideas."""
     try:
         cleaned_content = clean_content(content)
@@ -133,7 +135,7 @@ Content: {cleaned_content}
 Respond with only the tags, one per line, each tag being 1-2 words maximum:"""
         
         result = subprocess.run([
-            'llm', '-m', 'qwen3:32b', '-o', 'think', 'false', prompt
+            'llm', '-m', model, prompt
         ], capture_output=True, text=True, timeout=30)
         
         if result.returncode == 0:
@@ -184,8 +186,8 @@ Respond with only the tags, one per line, each tag being 1-2 words maximum:"""
         return []
 
 
-def generate_summary(title: str, content: str) -> str:
-    """Generate a summary using the LLM command line with Ollama."""
+def generate_summary(title: str, content: str, model: str = 'gpt-4o-mini') -> str:
+    """Generate a summary using the LLM command line."""
     cleaned_content = clean_content(content)
     
     # Truncate content if too long to avoid token limits
@@ -202,9 +204,9 @@ Content: {cleaned_content}
 Final summary (2 sentences maximum):"""
     
     try:
-        # Use subprocess to call llm with the think=false option
+        # Use subprocess to call llm
         result = subprocess.run([
-            'llm', '-m', 'qwen3:32b', '-o', 'think', 'false', prompt
+            'llm', '-m', model, prompt
         ], capture_output=True, text=True, timeout=60)
         
         if result.returncode == 0:
@@ -227,7 +229,7 @@ Final summary (2 sentences maximum):"""
         return f"Error generating summary: {str(e)}"
 
 
-def process_stories(input_file: Path, output_file: Path, max_stories: int = None) -> None:
+def process_stories(input_file: Path, output_file: Path, max_stories: int = None, model: str = 'gpt-4o-mini') -> None:
     """
     Process all stories in the JSON file and generate summaries, topics, and tags.
     
@@ -235,12 +237,13 @@ def process_stories(input_file: Path, output_file: Path, max_stories: int = None
         input_file (Path): Path to input JSON file
         output_file (Path): Path to output JSON file
         max_stories (int, optional): Maximum number of stories to process. If None, process all stories.
+        model (str): LLM model to use for processing
     """
     try:
-        # Load topics
-        topics_file = input_file.parent.parent / 'data' / 'topics.csv'
+        # Load topics and descriptions
+        topics_file = input_file.parent.parent / 'data' / 'new_topics.csv'
         topics = load_topics(topics_file)
-        print(f"Loaded {len(topics)} topics")
+        print(f"Loaded {len(topics)} topics with descriptions")
         
         # Read the input JSON file
         print(f"Reading stories from: {input_file}")
@@ -266,13 +269,15 @@ def process_stories(input_file: Path, output_file: Path, max_stories: int = None
                 topic = classify_topic(
                     story.get('title', ''),
                     story.get('content', ''),
-                    topics
+                    topics,
+                    model
                 )
                 
                 # Generate summary
                 summary = generate_summary(
                     story.get('title', ''), 
-                    story.get('content', '')
+                    story.get('content', ''),
+                    model
                 )
                 
                 # Generate tags
@@ -280,16 +285,18 @@ def process_stories(input_file: Path, output_file: Path, max_stories: int = None
                     story.get('title', ''),
                     story.get('content', ''),
                     topic,
-                    summary
+                    summary,
+                    model
                 )
                 
-                # Create summary object with topic and tags
+                # Create summary object with topic, tags, and full content
                 summary_obj = {
                     "link": story.get('link', ''),
                     "title": story.get('title', ''),
                     "topic": topic,
                     "tags": tags,
-                    "summary": summary
+                    "summary": summary,
+                    "content": story.get('content', '')
                 }
                 
                 summaries.append(summary_obj)
@@ -303,9 +310,10 @@ def process_stories(input_file: Path, output_file: Path, max_stories: int = None
                 summary_obj = {
                     "link": story.get('link', ''),
                     "title": story.get('title', ''),
-                    "topic": "General news",
+                    "topic": "No topic",
                     "tags": [],
-                    "summary": f"Error generating summary: {str(e)}"
+                    "summary": f"Error generating summary: {str(e)}",
+                    "content": story.get('content', '')
                 }
                 summaries.append(summary_obj)
             
@@ -340,15 +348,27 @@ def main():
     parser = argparse.ArgumentParser(description='Process CNS Maryland posts and generate summaries using LLM')
     parser.add_argument('-test', '--test', action='store_true', 
                        help='Test mode: process only 5 stories instead of all stories')
+    parser.add_argument('-m', '--model', required=True,
+                       help='LLM model to use (e.g., gpt-4o-mini, claude-3.5-haiku)')
+    
+    # If no arguments provided, show help
+    if len(sys.argv) == 1:
+        parser.print_help()
+        sys.exit(1)
+    
     args = parser.parse_args()
     
     # Set up file paths
     script_dir = Path(__file__).parent
     input_file = script_dir.parent / 'data' / 'cns_maryland_posts_stripped.json'
-    output_file = script_dir.parent / 'data' / 'story_summaries_test.json'
     
-    # Set max_stories based on test flag
-    max_stories = 5 if args.test else None
+    # Set output file based on test flag
+    if args.test:
+        output_file = script_dir.parent / 'data' / 'story_summaries_test.json'
+        max_stories = 5
+    else:
+        output_file = script_dir.parent / 'data' / 'story_summaries.json'
+        max_stories = None
     
     # Check if input file exists
     if not input_file.exists():
@@ -370,7 +390,7 @@ def main():
     print("=" * 50)
     print(f"Input file: {input_file}")
     print(f"Output file: {output_file}")
-    print(f"Model: qwen3:32b (via Ollama command-line with think=false)")
+    print(f"Model: {args.model}")
     print("Features: Summarization, Topic Classification, Tag Generation")
     if args.test:
         print("Mode: TEST (processing only 5 stories)")
@@ -387,7 +407,7 @@ def main():
     
     # Process the stories
     start_time = time.time()
-    process_stories(input_file, output_file, max_stories)
+    process_stories(input_file, output_file, max_stories, args.model)
     end_time = time.time()
     
     print(f"\nProcessing completed in {end_time - start_time:.2f} seconds")
