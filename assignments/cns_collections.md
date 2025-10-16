@@ -55,8 +55,8 @@ Choose a topic from the list that has a good number of stories (aim for at least
 # Replace 'Elections' with your actual topic name as it appears in the data
 uv run sqlite-utils memory ../../data/story_summaries.json \
   "SELECT * FROM story_summaries 
-   WHERE topic = 'Elections'" \
-  --json-cols > story_summaries_elections.json
+   WHERE topic = 'Immigration'" \
+  --json-cols > story_summaries_immigration.json
 ```
 
 **Examples for other topics:**
@@ -180,10 +180,10 @@ def main():
     # Define your schema prompt based on your beat - CUSTOMIZE THIS!
     schema_prompt = """
     {
-      "people": ["Person Name 1", "Person Name 2"],
-      "geographic_focus": "Baltimore City",
-      "key_institutions": ["Maryland General Assembly", "Department of Environment"],
-      "beat_specific_field": "value"
+      "people": ["Korean Americans", "Maryland immigrants", "President Trump"],
+      "geographic_focus": "United States",
+      "key_institutions": ["Maryland General Assembly", "Trump Administration"],
+      "Immigration status": ["legal immigrant", "illegal immigrant", "not legal immigrant", "not mentioned"]
     }
     """
 

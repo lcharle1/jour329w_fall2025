@@ -1,4 +1,4 @@
-# CNS More Datasette
+clea# CNS More Datasette
 
 Now that you've worked with CNS data and created some collections, let's explore more advanced ways to enrich and analyze that data using Datasette. We'll use two powerful features: enrichments to enhance your data with AI analysis, and embeddings to find semantic relationships between stories.
 
