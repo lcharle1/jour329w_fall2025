@@ -64,18 +64,12 @@ def main():
     schema_prompt = """
     {
       "people": ["Korean Americans", "Maryland immigrants", "President Trump"],
-      "geographic_focus": "United States",
+      "geographic_focus": ["United States","Maryland","Prince George's County"],
       "key_institutions": ["Maryland General Assembly", "Trump Administration"],
-      "Immigration status": ["legal immigrant", "illegal immigrant", "not legal immigrant", "not mentioned"]
+      "immigration_status": ["legal immigrant", "illegal immigrant", "not legal immigrant", "not mentioned"]
     }
     """
 
-    # Process each story
-    enhanced_stories = []
-    for i, story in enumerate(stories):
-        print(f"Processing {i+1}/{len(stories)}: {story['title']}")
-        
-        metadata = extract_metadata(story['title'], story['content'], schema_prompt, args.model)
     # Process each story
     enhanced_stories = []
     for i, story in enumerate(stories):
