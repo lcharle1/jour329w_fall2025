@@ -66,7 +66,8 @@ def main():
       "people": ["Korean Americans", "Maryland immigrants", "President Trump"],
       "geographic_focus": ["United States","Maryland","Prince George's County"],
       "key_institutions": ["Maryland General Assembly", "Trump Administration"],
-      "immigration_status": ["legal immigrant", "illegal immigrant", "not legal immigrant", "not mentioned"]
+      "reporter": "who is the reporter(s)of the article",
+      "
     }
     """
 

@@ -15,3 +15,7 @@ Immigration, 77 stories
 - All of my LLMS failed. 
 - I realized I typed "Immigration status" and not "immigration_status". I will fix the formatting to match the other metadatas
 - I learned seeing 'LLM failed' for all of them had to do with the API key. I will restart from the beginning and make sure everthing works accordingly and try my metadata again.
+
+# new errors - 10/17/2025
+
+I am receiving this error since after this command: 'uv run datasette beat_stories.db'. This is the error: 
