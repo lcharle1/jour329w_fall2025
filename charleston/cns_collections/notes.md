@@ -13,4 +13,5 @@ Immigration, 77 stories
 
 # review 
 - All of my LLMS failed. 
-- I realized I typed "Immigration status" and not "immigration_status". I think the formatting difference in listing the metadata 
+- I realized I typed "Immigration status" and not "immigration_status". I will fix the formatting to match the other metadatas
+- I learned seeing 'LLM failed' for all of them had to do with the API key. I will restart from the beginning and make sure everthing works accordingly and try my metadata again.
