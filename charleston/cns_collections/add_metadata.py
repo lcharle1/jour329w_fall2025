@@ -63,11 +63,9 @@ def main():
     # Define your schema prompt based on your beat - CUSTOMIZE THIS!
     schema_prompt = """
     {
-      "people": ["Korean Americans", "Maryland immigrants", "President Trump"],
+        "people": ["Korean Americans", "Maryland immigrants", "President Trump", "Martinez-Hernandez"],
       "geographic_focus": ["United States","Maryland","Prince George's County"],
       "key_institutions": ["Maryland General Assembly", "Trump Administration"],
-      "reporter": ["who is the reporter(s)of the article"],
-      "publication_date":["what is the publication date of every article"],
       "type_of_journalism":["what form or type of journalims is this article? Is it investigative, breaking news, feature, profile, or any other."],
       "trump_administration":["True|False"],
     }

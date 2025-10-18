@@ -19,3 +19,7 @@ Immigration, 77 stories
 # new errors - 10/17/2025
 
 I am receiving this error since after this command: 'uv run datasette beat_stories.db'. This is the error: 
+
+# Analysis and Insights 
+
+1. Key Players: 
