@@ -48,6 +48,16 @@ I think changing the format to standard operation manual influenced it's lenth. 
 - Including different ways to improve the writing is appreciated. Section "How to Structure Your Stories" and "Important Context for Your Coverage" will help make sure the journalist completes the stories correctly and with ethical consideration.
 
 ## Trial 3
-
+- With trial 3, I wanted to see the quality of the response if we shortened the prompt. This was out of curiousity. Each sentence is like a command
+- This version is shorter but still helpful. It does not go into the specific details prior versions have. The separate section of listing people and institution is not there but it is done a few times in paragraphs where it is relevant. The sections of information we've seen before - i.e., ethical consideration, underreported, suggested resources to use, explanation of people and institutions, etc. - but it is formatted differently. Some no longer have their own extensive section, its listed whereever it is relevant, and then moves on to the next example. This tells me that the prompt for this Beat Book will not be a short one and the examples and specification is necessary for the prompt too. 
 
 ## Trial 4 
+- This version is not too different from trial two. It contains more details on resource to use and has a separate section for people and institutions, in comparison to trial 3. It even suggested geographic focus areas and sources to contact. 
+- I added 'menu writing style' because I wanted to use a different writing style that fit the criterias we needed. Concise with important information. I was also simply curious what mentioning a writing style like that would include. I was worried it would write differently, using food analogy. Like how trial 1 wrote like it was a syllabus because I included 'structured cirriculum progression'. Overall, this is not a bad outcome, but 'menu writing style' is no different than prior suggested writing formats. 
+
+
+Overall I would rank the trials as such based on how much I like the results, despite any concerns we need to work on:
+- trial 1
+- trial 2 
+- trial 3
+- trial 4 
