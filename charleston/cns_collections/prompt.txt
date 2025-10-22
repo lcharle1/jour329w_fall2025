@@ -1,12 +1,1 @@
-
-Make a Prototype Beat Book - Prompt
-
-"people": ["For each aricle provided, read through it and list each person, ethnicity, or nationality listed in it. Include their full name if possible.","Korean Americans", "Maryland immigrants", "President Trump", "Martinez-Hernandez", "agents", "refugees", "immigrants"]
-
-"geographic_focus": ["For each article provided, read through it and list every country, state, county, town, etc. mentioned.", "Jamaica", "El Salvador", "United States", "Maryland", "Prince George's County", "Baltimore", "Chesapeake Bay"]
-
-"key_institutions": ["For each article provided, read through it and list every federal, state, or local organization and institution mentioned.", "Maryland General Assembly", "ICE", "Department of Homeland Security", "DHS", "Trump Administration"]
-
-"type_of_journalism": ["For each article provided, read through it. What form or type of journalism is this article? Is it investigative, breaking news, feature, profile, or any other?", "breaking news", "profile", "investigative", "video journalism", "photojournalism", "sports journalism"]
-
-"trump_administration": ["True|False"]
+Create a menu writing style narrative guide in Markdown format that explains, using examples and lessons from the attached JSON, what is important for an early-career journalist who knows the basics to understand about the topic, including the key people, issues and institutions. Taking into account the kinds of stories have been done, suggest other story ideas or undercovered angles. Introduce the journalist to the topic as if you were an expert guide. Be careful about stories that are not resolved, such as ongoing lawsuits or policy debates; include a caveat that these might already be completed, but identify unfinished stories. Focus on the future more than the past; this is more about story ideas than history. Give more weight to more recent coverage.The language should be business casual, and it should not be primarily a list of bullet points, but you can use bullet points for checklists or proposed sources or locations for a suggested story angle. If a timeline is important for the overall topic, mention that, but don’t over-emphasize older elements. Make sure you introduce and explain ideas, people and issues with substantive but not overwrought language. Not too many adjectives. Include citations to stories, including links, that provide useful context.

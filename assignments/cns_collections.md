@@ -69,23 +69,20 @@ uv run sqlite-utils memory ../../data/story_summaries.json \
   --json-cols > story_summaries_maryland_government_politics.json
 
 # For Education:
-uv run sqlite-utils memory ../../data/story_summaries.json \
-  "SELECT * FROM story_summaries 
-   WHERE topic = 'Education'" \
-  --json-cols > story_summaries_education.json
 
-# For Baltimore:
+
+# For Immigration:
 uv run sqlite-utils memory ../../data/story_summaries.json \
   "SELECT * FROM story_summaries 
-   WHERE topic = 'Baltimore'" \
-  --json-cols > story_summaries_baltimore.json
+   WHERE topic = 'Immigration'" \
+  --json-cols > story_summaries_immigration.json
 ```
 
 Verify your results:
 
 ```bash
 # Check how many stories you got
-uv run jq 'length' story_summaries_elections.json
+uv run jq 'length' story_summaries_immigration.json
 
 ```
 
@@ -181,18 +178,12 @@ def main():
     schema_prompt = """
     {
       "people": ["Korean Americans", "Maryland immigrants", "President Trump"],
-      "geographic_focus": "United States",
+      "geographic_focus": ["United States","Maryland","Prince George's County"],
       "key_institutions": ["Maryland General Assembly", "Trump Administration"],
-      "Immigration status": ["legal immigrant", "illegal immigrant", "not legal immigrant", "not mentioned"]
+      "reporter": ["who is the reporter(s)of the article"],
+
     }
     """
-
-    # Process each story
-    enhanced_stories = []
-    for i, story in enumerate(stories):
-        print(f"Processing {i+1}/{len(stories)}: {story['title']}")
-        
-        metadata = extract_metadata(story['title'], story['content'], schema_prompt, args.model)
     # Process each story
     enhanced_stories = []
     for i, story in enumerate(stories):
@@ -237,7 +228,7 @@ Run the script with the required arguments:
 
 ```bash
 # Example usage - replace with your actual input file and preferred model
-uv run python add_metadata.py --model gpt-4o-mini --input story_summaries_housing.json
+uv run python add_metadata.py --model gpt-4o-mini --input story_summaries_immigration.json
 
 # Or use Claude (if you have the API key set)
 uv run python add_metadata.py --model claude-3.5-haiku --input story_summaries_housing.json
@@ -254,6 +245,8 @@ Use sqlite-utils to create a database from your enhanced collection:
 
 ```bash
 # Create database and import your stories
+rm beat_stories.db 
+
 uv run sqlite-utils insert beat_stories.db stories enhanced_beat_stories.json --pk link
 
 # Now the metadata fields are stored as separate columns:
@@ -289,7 +282,7 @@ Do these findings make sense? Document your findings in `notes.md`. What changes
 Take your `enhanced_beat_stories.json` file and `notes.md` evaluation and create a prompt that produces a guide for a reporter assigned to cover stories on that topic. Put that prompt in a file called `prompt.txt`. You can be as detailed as you like in the prompt, and you can revise and re-run it. You will choose the model and replace "REPLACE WITH YOUR MODEL" below with it and then run the command.
 
 ```bash
-cat prompt.txt enhanced_beat_stories.json | uv run llm -m REPLACE WITH YOUR MODEL > prototype.md
+cat prompt.txt enhanced_beat_stories.json | uv run llm -m claude-3.5-haiku > prototype.md
 ```
 
 ### Evaluation
