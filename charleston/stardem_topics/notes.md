@@ -155,15 +155,6 @@ Ran terminal command: uv run llm keys get groq
 
 Made changes.
 
-## Notes
-
-The script does not provide topics. Every story received an "uncategorzed". I continued talking with Copilotto try to resolve the issue and followed their steps but the error persists. For the second time it sugested an invalid API key error, but there is a Groq API Key in. Other than the topic, my script provides the same information as stardem_sampe.json.
-
-## Notes: Update
-
-It works now 
-
-
 ## Results Analysis
 
 I think the LLM followed instructions but not as intended. It created very specific or too general topics. Some topics were just right or they were the same topic category written in different ways. For example, obits were written either as obituaries or obituary. There was another story topic that listed "Voter Turnout" and "Election 2024". It would be easier to classify all in one as Elections. There was also the problem of the topic lsiting the crime as well as "Crime". The added context is nice but it is too specific for a classification system.
