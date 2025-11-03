@@ -52,7 +52,7 @@ Choose a topic from the list that has a good number of stories (aim for at least
 
 ```bash
 # Save all stories for your chosen topic
-# Replace 'Elections' with your actual topic name as it appears in the data
+# Replace 'Elections' with your actual topic name as it appears in the data (and in the .json file)
 uv run sqlite-utils memory ../../data/story_summaries.json \
   "SELECT * FROM story_summaries 
    WHERE topic = 'Immigration'" \
@@ -174,7 +174,7 @@ def main():
         print("Make sure to update the --input parameter to match your topic file!")
         return
 
-    # Define your schema prompt based on your beat - CUSTOMIZE THIS!
+    # Define your schema prompt based on your beat - CUSTOMIZE THIS by giving examples or instructions. Your beat-specific field should be something that can be extracted that is specific to your topic.
     schema_prompt = """
     {
       "people": ["Korean Americans", "Maryland immigrants", "President Trump"],
@@ -228,9 +228,9 @@ Run the script with the required arguments:
 
 ```bash
 # Example usage - replace with your actual input file and preferred model
-uv run python add_metadata.py --model gpt-4o-mini --input story_summaries_immigration.json
+uv run python add_metadata.py --model gpt-4o-mini --input story_summaries_housing.json
 
-# Or use Claude (if you have the API key set)
+# Or use Claude - replace with your actual input JSON file
 uv run python add_metadata.py --model claude-3.5-haiku --input story_summaries_housing.json
 
 # Run without arguments to see help
