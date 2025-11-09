@@ -63,12 +63,13 @@ def main():
     # Define your schema prompt based on your beat - CUSTOMIZE THIS!
     schema_prompt = """
     {
-        "people": ["List the different people, their full name, mentioned in the article","Korean Americans", "Maryland immigrants", "President Trump", "Martinez-Hernandez"],
-      "geographic_focus": [List the different geographical locations in the article. For example, countries, states, counties, towns, etc.","United States","Maryland","Prince George's County"],
-      "key_institutions": [List the different federal, state, or local organizations involved in the article","Maryland General Assembly", "Trump Administration"],
+        "people": ["List the first and last names of individuals mentioned in the story. This includes, but is not limited to, government officials, regular citizens, ethnicities, and more”, "Korean Americans", "Maryland immigrants", "President Trump", "Martinez-Hernandez"],
+      "geographic_focus": ["List the different geographical locations mentioned in the article. For example, countries, states, counties, towns, etc.","United States","Maryland","Prince George's County", "Easton", "Cecil County", "Dorchester"],
+      "key_institutions": ["List the different federal, state, or local organizations involved in the article","Maryland General Assembly", "Trump Administration"],
       "type_of_journalism":["what form or type of journalims is this article? Is it investigative, breaking news, feature, profile, or any other."],
       "trump_administration":["True|False"],
-      "protests": ["True|False"]
+      "primary_topic": ["What is the primary article topic the story fits under?", "Art and Music", "Obituary", "Education", "News", "Government and Politics", "Sports", "Health", "Economy", "Environment", "Agriculture and Farming", "Housing and Ubran Planning"], 
+      "secondary_topic": ["What is the second possible article topic the story fits under?", "Art and Music", "Obituary", "Education", "News", "Government and Politics", "Sports", "Health", "Economy", "Environment", "Agriculture and Farming", "Housing and Ubran Planning"]
     }
     """
     # Process each story
@@ -76,7 +77,7 @@ def main():
     for i, story in enumerate(stories):
         print(f"Processing {i+1}/{len(stories)}: {story['title']}")
         
-        metadata = extract_metadata(story['title'], story['summary'], schema_prompt, args.model)
+        metadata = extract_metadata(story['title'], story['content'], schema_prompt, args.model)
         
         # Add metadata fields as separate columns instead of nested object
         enhanced_story = story.copy()
