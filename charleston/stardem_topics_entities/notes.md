@@ -26,4 +26,26 @@ I added a metadata to list which publication the article came from and the resul
 
 
 # stories_with_entities_v2
-- 
+- Model: groq/moonshotai/kimi-k2-instruct-0905
+- Topic: Race and Diversity
+- Prompt variations: I specified 'correctly spell the names and position and/or title of every interviewed and referenced individuals', after the Kristy vs. Kristi results in v1. 
+
+- evaluation: The issue I had with the interim town manager is resolved, the name of the woman is correct in the metadata people column. 
+
+My continued problem is missing people and institutions in articles. The Realtors holding summit on diversity, equity September 1, 2023 | Star Democrat, The (Easton, MD) article is missing some institutions (like Morgan University), locations (Waterfowl Building on Harrison Street in Easton), and people. 
+
+
+# Accuracy Assessment
+- As mentioned above, no. Each version has their respective or continued hiccups in accuracy. 
+- I did not notice any entities I felt were false positives or negatives. I felt every story had a good reason to be involved in Race and Diversity. 
+- In version one I would say no because the problem of Kristy vs. Kristi is there, but in version two its resolved. There is a possibility other incorrect duplicates are there in other metadata categories, so this is a prompt edit I want to make. 
+
+# Entity Quality
+- People: In the first version I was running into incorrect duplicate problems, for example Kristy vs. Kristi. That problem specifically resolved but in the second version I noticed I am still running into problems of the LLM not noticing people. In one article, 	Mid-Shore native appointed to Maryland Commission on African American History and Culture January 31, 2024 | Star Democrat, The (Easton, MD),  it only mentioned two people but I noted a lot of people were missing. 
+- Places: The locations are very general. Basic counties and a few specific places, but it is missing building names, streets (addresses), and other. 
+- Organizations: The organization or institution names were also lacking. In the same article, Mid-Shore native appointed, there are a lot of associations, organizations, centers and more.
+
+# Comparison Between Models/Prompts
+-   For the first version, I changed the prompt to be more specific with first and last names and positions and/or title, I added counties and their municipalities to be more specific with locatons, and listed the different topic categories definitions. It helped identify certain people and places and categorized the articles correctly, in my eyes, but there was still some room for improvments. The second time around a few of my problems was resolved - the incorrect duplicates - but others continued - the lack of places, people, and institutions. 
+- The second model was: gpt-oss:120b, and I felt it did better, despite it's continued issues. 
+- I have not found a pattern or systematic difference yet in how the entities are extracted but I want to loose further at articles missing singificant amount of names, places, and institutions and see why they did not get recognized. Is it the length of the story? Does the LLM only see the first few mentioned of the metadata.
