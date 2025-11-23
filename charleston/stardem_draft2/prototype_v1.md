@@ -1,234 +1,195 @@
-# The Eastern Shore Beat: A Friendly Field Guide for the Next Reporter  
-*Health, Safety & Community in Easton & Beyond*  
-*(Built from the 2023-25 clips in the Star-Democrat dataset)*
+# So You Got the Health & Public-Safety Beat on the Mid-Shore. Now What?
+
+Hey—congrats and condolences. You just landed one of the most interesting, emotionally heavy, and source-driven beats in Maryland journalism. The good news: you can walk to most of your stories. The bad news: half the people you meet will have already read the police report before you have.
+
+This guide is your cheat-code. I’ll walk you through how the beat actually works, who pulls the levers, where the bodies (literally and figuratively) are buried, and how to keep yourself sane while still breaking news that matters. I’ll lean hard on the last 18 months of *Star Democrat* clips, but everything is framed forward—because next week’s city-council budget vote or the unreported fentanyl analogue showing up in Denton will matter more than whatever happened in 2019.
 
 ---
 
-## 1. Welcome to the Beat – Why This Patch of Maryland Matters
+## 1. How the Beat Breathes
 
-Picture a crescent of farmland, tidal rivers and small towns wedged between the world's largest estuary and a fast-growing metro corridor. Health stories here can start in a cornfield (pesticide drift), detour through a crab-picking house (workplace injury), stop at an urgent-care trailer parked behind a Dollar General, and end in the State House in Annapolis where poultry regulations are written. Public-safety stories can hinge on a single bridge (one way in, one way out), a volunteer fire hall that's been waiting two years for a new tanker, or a Johns Hopkins pediatric radiologist who sees too many "non-accidental" tibia fractures from toddlers on the Mid-Shore.
+### The Landscape
+Think of the Mid-Shore as two parallel universes that occasionally collide. Universe #1 is picket-fence Easton: boutique tacos, yoga studios in converted 1840s storefronts, million-dollar condos overlooking the Miles. Universe #2 is everything 10 minutes inland: trailer parks on well water, volunteer fire companies that still run 1975 engines, and a 911 dispatch map that lights up like a Christmas tree every Saturday at 2 a.m.
 
-The incentives are local, but the stakes are regional: Bay ecology, food safety, opioid trafficking routes, and the political tilt of the state. Your audience includes watermen who remember when the Bay was thick with oysters, poultry growers worried about nutrient rules, retirees who moved here for the golf and the tax break, and high-school kids who can't find a pediatric psychiatrist within 50 miles.
+Your job is to live in the friction zone where those universes meet—hospital board meetings at 8 a.m., overdose clusters behind the Royal Farms at midnight.
 
-Stories surface in predictable places – county health department COVID dashboards, district court dockets, volunteer fire-company Facebook pages – but also in the checkout line at Harris Teeter or at 3 a.m. on Route 50 when a chicken truck overturns. The best tipsters are often the people paid least: EMS lieutenants, school nurses, probation agents, bartenders, and Methodist preachers who visit everybody in the parish twice a year.
+### Stakeholders & Incentives
+- **County electeds** want crime stats low and EMS response times unremarkable.
+- **Hospital systems** (UM Shore, Johns Hopkins, AAMC) want to expand market share and keep their Leapfrog grade above a C.
+- **Nonprofits** (Talbot Humane, For All Seasons, Chesapeake Multicultural Resource Center) want grant money and column inches.
+- **Cops & fire chiefs** want warm bodies—recruits, volunteers, and favorable OT budgets.
+- **Defense attorneys** want you to spell their client’s name right and include “allegedly.”
+- **Public** mostly wants to know if it’s safe to leave the boat unlocked overnight.
 
-The forces reshaping the beat right now:
+### Where Stories Come From
+1. **Scanner traffic** (still the fastest source of breaking news).
+2. **Court dockets**—civil and criminal. Kautz child-abuse case (04/24) started in a sealed juvenile petition.
+3. **Agency press releases**—but always FOIA the underlying report; you’ll find the good quotes in the officer’s narrative.
+4. **Hospital quality dashboards**—CMS publishes infection and readmission rates quarterly; local CEOs hate when you notice they’re an outlier.
+5. **Community rumor mill**—the Facebook group “What’s Going on in Easton?” is 60% nonsense, 20% gold, 20% your next source.
 
-- Climate gentrification: waterfront homes that were working-class fishing shacks now sell to D.C. tele-commuters, pushing property-tax revenue up and affordable housing stock down.
-- A poultry boom that keeps the tax base alive while polluting the rivers.
-- A slow-burn workforce crisis: not enough primary-care docs, paramedics, or public defenders.
-- The post-COVID ripple: delayed elective surgeries, a mental-health tsunami among teens, and restaurants still short on food-safety inspectors.
-
-Keep those four currents in mind and every story you chase will feel bigger than its lede.
-
----
-
-## 2. Seven Themes That Keep Showing Up (and Why You Should Keep Them on Speed-Dial)
-
-Below are the clusters that appear again and again in the 2023-25 clips. For each theme you'll find:
-
-- Why it matters to readers
-- Who the institutional players are
-- Where the tension/competing narratives live
-- One concrete clip from the dataset (with date so you can click back)
-- The "status unknown" flag if the story moved after press time
-
-### Theme 1. Child Protection in a Rural System
-
-**Why it matters**  
-The Mid-Shore has some of the state's highest rates of child-poverty and foster-care placement, but only one pediatric forensics team – Hopkins – within driving distance. When a toddler shows up with healing tibia breaks, the local social-services office, small-town cops and world-class specialists have to form a quick daisy-chain of evidence.
-
-**Institutions & Stakeholders**  
-Talbot County DSS → Easton Police → State's Attorney's Office → Johns Hopkins Pediatric Urgent Care → local family-court judges → foster parents & CASA volunteers.
-
-**Competing viewpoints**  
-Defense attorneys argue over-interpretation of x-rays; pediatricians counter that "bucket-handle" fractures are pathognomonic; DSS walks a tightrope between parental rights and child safety; prosecutors worry about statute-of-limitations clocks.
-
-**Example in the data**  
-- ["Easton man convicted of child abuse, assault"](news/198350D6DACB4890) (4/3/24) – conviction on first-degree child abuse after Hopkins radiologists testified about healing fractures. Sentencing set for 6/10/24 – **check if that happened**.
-
-**Status unknown flag**  
-The sentencing was still pending at publication; victim placement and restitution orders may have changed.
-
-### Theme 2. Youth Mental Health & Suicide Clusters
-
-*(No single story in this dataset, but every guidance counsellor interview or school-board minutes item points to it.)*
-
-**Why it matters**  
-The Shore has no in-patient adolescent psych beds between Wilmington and Baltimore. A single suicide can ripple through three counties via Snapchat within hours.
-
-**Institutions**  
-School districts, Caroline County Core Service Agency, For All Seasons (the rape-crisis/mental-health non-profit), University of Maryland Shore Regional Health, local pastors, the state Mobile Crisis Team.
-
-**Angle list**  
-- Track 988 call-zip-code data; compare to school absences.
-- FOIA the state's waiver that keeps Eastern Shore Hospital's adolescent unit closed "for staffing."
-- Follow a kid on the wait-list for Shore Regional's partial-hospitalization program.
-
-### Theme 3. Volunteer EMS & the 9-1-1 Staffing Death Spiral
-
-**Why it matters**  
-Caroline, Dorchester and Talbot still rely on volunteers for 60-70 % of calls. A delayed ambulance on Route 50 can mean a 40-minute ride to the nearest trauma center.
-
-**Players**  
-County DES directors, paid/call firefighters, state EMS board, Maryland Institute for Emergency Medical Services Systems (MIEMSS), town councils that approve tax breaks for new substations.
-
-**Competing narratives**  
-"We can't afford paid 24/7" vs. "Volunteers are burning out" vs. "A basic ambulance ride shouldn't cost $1,800."
-
-**Story seed in the data**  
-- The April 2024 baseball game for late coach Matt Blue (4/6/24) drew two fire-company trucks for the color-guard; ask the station chief how many volunteers under 30 they have left.
-
-### Theme 4. Poultry, Pollution & the Nutrient Bubble
-
-*(Not explicit in the clips, but every ag-beat reporter here ends up covering chicken house permits.)*
-
-**Why it matters**  
-Perdue, Mountaire and smaller growers employ thousands; phosphorous runoff feeds algal blooms that close beaches and crab seasons.
-
-**Institutions**  
-MDE, MDA, University of MD Extension, Delmarva Poultry Industry Inc., Waterkeepers Chesapeake, farmers co-ops, county planning & zoning boards.
-
-**Angles**  
-- Compare Dept. of Ag animal-feeding-operation permits filed with citizen groundwater-nitrate tests.
-- Follow a "manure transport" truck from Somerset to see if it really leaves the watershed.
-- Track the new state subsidy for manure-to-energy; who applied, who got it, and where the digesters will sit.
-
-### Theme 5. The Invisible Labor Force on H-2B Visas
-
-*(Not in clips yet, but every crab-picking house and hotel in season relies on them.)*
-
-**Why readers care**  
-A single bureaucratic delay can shut down a seafood wholesaler or the boardwalk fudge shop that depends on summer workers.
-
-**Players**  
-U.S. Labor & State Departments, Eastern Shore Seafood Packers Assn., local motels, Spanish-speaking pastors, Legal Aid.
-
-**Potential FOIA**  
-Request the monthly H-2B processing data for Worcester County; overlay with unemployment claims to test the "labor shortage" narrative.
-
-### Theme 6. Rebounding from Loss – Sports as Community Glue
-
-**Why it matters**  
-High-school games are the only nightly gathering some towns have left; when a beloved coach dies of cancer, the next game's first pitch becomes civic ritual.
-
-**Clip example**  
-- ["Easton follows great loss with victory"](news/19849FCF51050E40) (4/6/24) – Coach Matt Blue dies Friday night; his son Dustin's two-hit pitching on Saturday becomes the town's collective exhale.
-
-**Angles**  
-- Follow the GoFundMe for the Blue children's college fund; track how much came from rival Queen Anne's parents.
-- Use the rosters as a back-door census: who's moved in from PG County, who's living with a grandparent, who transferred for athletics.
-
-### Theme 7. Arts & Aging – Culture as Rural Economic Strategy
-
-**Clip example**  
-- Photography show in Chestertown's Heron Point retirement community (6/26/24) – seven Salisbury-based photographers market Delmarva beauty to retirees who might donate, relocate, or volunteer.
-
-**Why it matters**  
-Retirees are the fastest-growing demographic; arts councils use exhibitions to pull them into downtown economies.
-
-**Stakeholders**  
-Heron Point, Academy Art Museum, Easton Main Street, AARP state office, county tourism boards, resident-artists who teach workshops.
-
-**Story idea**  
-Map every 55-plus community that now has an in-house "arts council"; compare property values within half a mile before/after.
+### Evolving Forces
+- Fentanyl analogues are creeping south from Wilmington into rural Queen Anne’s; EMS now stocks twice the naloxone.
+- Population churn: retirees cashing out of D.C. suburbs, Guatemalan poultry workers clustering in Ridgely, remote-worker families pricing out locals.
+- Climate: nuisance tidal flooding on Harrison St. is now a 30-times-per-year thing; ER docs see more falls and septic infections after floods.
+- Post-COVID hospital finances: UM Shore’s parent, UMD Medical System, is quietly shopping around its lease agreement for the 2026 renewal. Could mean service cuts or expansion—no one knows yet.
 
 ---
 
-## 3. People You'll Quote Again and Again (and Why They Pick Up the Phone)
+## 2. The Recurring Themes You’ll Live Inside
 
-**Joseph Coale** – Talbot County State's Attorney. Young, media-savvy, likes to e-mail bite-sized quotes the same day. Uses every conviction to signal "we protect kids." Keep his cell; you'll need sentencing updates.
+### 1. Child Protection in the Shadows
+**Why it matters:** The Eastern Shore still farms kids in and out of kinship care like it’s 1995. A single caseworker often covers two counties. When something goes wrong (see Kautz conviction, 04/24), everybody points fingers.
 
-**Earl Andrew Kautz** – Convicted abuser (4/24). You'll never interview him, but his appeal or probation status will be your follow-up.
+**Key players:** Talbot Co. DSS, Easton PD, pediatricians at Hopkins, State’s Attorney Coale, CASA volunteers.
 
-**Barbara Finneson** – Heron Point Art Interest Group. 20-year resident who can connect you to deep-pocket donors and to octogenarians who paint for the first time. Great for trend features.
+**Competing views:** DSS says privacy laws prevent comment; SAO wants max sentences; defense attorneys argue systemic under-funding drives tragedies.
 
-**The late Matt Blue** – Still a character in Easton lore. His family, players, and the #BluesWave foundation will be worth annual check-ins.
+**When it appears:** After every closed-abuse trial or when a kid lands in PICU with “non-accidental trauma.”
 
-**Dustin Blue** – Teen pitcher who threw a two-hitter the day after his dad died. A living symbol of community resilience; treat with care.
+**Status check:** Kautz sentencing was set for June 10, 2024. We never ran a follow; you should confirm custody status and any appeal.
 
-**Maggie Trovato** – Bylined the child-abuse conviction story; good example of how to weave medical-expert quotes into a court brief.
+### 2. Rural EMS on Life Support
+**Why it matters:** Volunteer squads in Cordova, Queen Anne, and Secretary are down to 4–5 active EMTs each. Response times for cardiac calls can top 18 minutes.
 
-**Bill Haufe** – Sports columnist who chronicles games like civic scripture; follow him for names and emotional temperature.
+**Stakeholders:** County emergency services boards, paid ALS intercept crews from Queen Anne’s Paramedics, hospital stroke-center accreditation teams.
+
+**Angles:** Mutual-aid billing fights, recruitment of high-schoolers via “Cadet” programs, state helicopter EMS landing-zone disputes.
+
+**Clip hint:** 12/24 girls-soccer state-champ story casually mentioned athletic-trainer coverage; ask whether trainers carry naloxone.
+
+### 3. The Invisible Overdose Belt
+**Why it matters:** Fatal OD numbers in Talbot (pop. 38k) rival those in much larger Cecil County. Fentanyl is pressed into fake Percocet; xylazine is rotting skin.
+
+**Players:** Health dept. Harm-reduction van, local pharmacies, State’s Attorney, faith-based recovery ministries, Oxford House operators.
+
+**Viewpoints:** Cops push felony “distribution resulting in death” charges; health officials want safe-consumption sites (politically DOA in Annapolis).
+
+**Story spark:** Track the June 2024 spike mentioned in the state health alert; FOIA 911 naloxone-administration logs by ZIP.
+
+### 4. Hospital Capacity Chess
+**Why it matters:** UM Shore is the only inpatient facility between Annapolis and Salisbury. One electronic-medical-record crash or surgeon resignation and elective procedures stop.
+
+**Institutions:** UMD Medical System board, Leapfrog Group, nurse unions, Talbot County commissioners (contribute $2 m/yr subsidy).
+
+**Conflicts:** Rural Medicare margins are negative; system execs quietly shift ortho cases to Easton to keep surgeons happy while moving psych to Baltimore.
+
+**Tip:** Pull CMS “Hospital Compare” data every July refresh; if Easton’s sepsis mortality jumps from 19/1000 to 22/1000, that’s a banner headline.
+
+### 5. Youth Mental-Health Spiral
+**Why it matters:** School-based therapists saw 60% caseload growth post-COVID; ER holds for psych boarders average 28 hrs (state target = 4).
+
+**Stakeholders:** School counselors, For All Seasons (the only sliding-scale clinic), ER docs, private-practice LCSWs, mobile-crisis teams.
+
+**Framing:** Therapists say insurance reimbursement = $60/hr vs. $150+ private; parents say wait lists are 3 months.
+
+**Clip:** 04/24 sports story on Dustin Blue pitching after his dad’s death is a stealth mental-health narrative—grief support inside athletics.
+
+### 6. Climate-Health Nexus
+**Why it matters:** Tidewater Maryland is the country’s 3rd-fastest warming “heat island” east of the Mississippi. Heatstroke among migrant farmworkers; Vibrio wound infections.
+
+**Actors:** MD Dept. of Environment, Extension Service, vineyard & poultry growers, Bay Foundation, ER wound-care nurses.
+
+**Views:** Growers fear OSHA heat rules; health officials want mandatory shade tents; workers fear retaliation.
+
+**Story seed:** Chesapeake Bay temp hit 84°F in July 2024—FOIA ER visits for Vibrio that month vs. July 2023.
 
 ---
 
-## 4. Institutions That Run the Place (and How They Interlock)
+## 3. The People You’ll Quote Again and Again
 
-**Government**  
-- Talbot County Health Dept. – COVID, rabies clinics, restaurant inspections.  
-- Easton Police – small but PR-friendly; body-cam footage FOIA-able in 30 days.  
-- Talbot County Dept. of Social Services – child protection; press releases sparse, so cultivate caseworkers.  
-- State's Attorney Office – quick with post-conviction statements; always ask for the presentence-investigation report summary.
+- **Joseph Coale** – Talbot State’s Attorney; media-savvy, quotes in plain English, keeps calendar of upcoming sentencings. Text him, don’t call—he’s usually in court.
+- **Dr. James Gentry** – Medical director, Pediatric Urgent Care, Johns Hopkins (he testified in Kautz). Go-to for any kid-abuse medical angle.
+- **Dustin Blue** – Not just a feel-good sports anecdote. Teen pitched hours after dad’s cancer death (04/24). Story unfinished: how are athletes screened for PTSD?
+- **Mike Kern** – Queen Anne’s girls soccer/basketball coach (12/24). He’s a gateway to youth-sports health issues: concussions, heat policy, NIL rumors in 2A schools.
+- **Fredia Woolard** – Director, Talbot Co. Dept. of Social Services. Impossible to reach by phone; email her assistant and copy the PIO. Grants you access to foster-care data (eventually).
+- **Steve Mangasarian** – Farmers-market vendor quoted on trash issues (04/25 letter). Represents small-business health regs (vendor permits, composting).
+- **Sharon Harrington** – Letter-writer defending farmers market. Retired nurse, reliable barometer for “what seniors think.” Great for man-on-the-street flu-shot season story.
 
-**Medical**  
-- University of Maryland Shore Regional Health – umbrella over Easton Hospital; PR office will walk you through trauma-center designation debates.  
-- Johns Hopkins Pediatric Urgent Care – not local, but their docs testify here; cultivate via LinkedIn.
+---
 
-**Non-profits & Faith**  
-- For All Seasons – rape-crisis and mental-health; bilingual counsellors; good data on wait-lists.  
-- Heron Point / Art Interest Group – portal to retiree arts economy.  
-- Ridgely Church of the Brethren – op-eds on lament/hope; pastors often know who is hungry, who's evicted.
+## 4. Institutions That Actually Matter
 
-**Education**  
-- Easton High, Queen Anne's, Colonel Richardson – athletic departments keep rosters that double as demographic snapshots; guidance offices know teen-suicide clusters before the health dept. does.
+### Government
+- **Talbot County Council** – controls health dept. budget line; meets 1st & 3rd Tues.
+- **Easton Town Council** – liquor-board overlap; downtown surveillance-camera grant.
+- **Maryland State Police Barrack S** (Centreville) – covers 3 counties; barrack commander rotates every 18 months—build relationship fast.
 
-**Business**  
-- Adams Publishing (owner of the Star Democrat) – chain headquartered out of state; coverage sometimes thin on weeklies, so your digital-first approach can scoop.
+### Medical
+- **UM Shore Regional Hospital at Easton** – 71 beds; STEMI & primary stroke; CEO Rory Callahan since 2022.
+- **AAMC** (Annapolis) – helicopter referral; owns some Talbot specialists via telehealth contracts.
+- **Heron Point Retirement Community** – Chestertown; 300+ residents, frequent norovirus outbreaks—good tracker piece.
+
+### Nonprofits & Quasi
+- **For All Seasons** – mental-health; sliding scale; wait-list dashboard (FOIA-able).
+- **Talbot Humane** – domestic-violence shelter; half their calls involve animal abuse—overlap with child-protection theme.
+- **Chesapeake Bay Maritime Museum** – 65,000 visitors/yr; EMS plan for heatstroke during OysterFest is a public-health angle.
+
+### Faith & Civic
+- **Ridgely Church of the Brethren** – hosts overdose-remembrance vigils (09/23 op-ed).
+- **Easton Lions Club** – funds narcan kits for Little League coaches—quirky enterprise story.
 
 ---
 
 ## 5. Geography Shapes Everything
 
-- **The Chesapeake Bay**: 200 miles of "linear beach towns" – every hurricane or nor'easter hits tourism, crab season, and property taxes.  
-- **Route 50**: one four-lane artery; an ambulance closure backs up trauma care statewide.  
-- **Land-use pattern**: historic towns (Oxford, St. Michaels) zoned before cars; narrow streets complicate fire-truck access.  
-- **Farmland vs. retirees**: poultry houses sit next to 55-plus developments; tension over smells, truck traffic.  
-- **Border with Delaware**: medical examiner cases sometimes bounce across state lines; different overdose-reporting rules.
+- **Route 50 = the IV line** – Heroin moves west-to-east; overdoses cluster within 1 mile of exits 37, 41, 46.
+- **Miles River & Tred Avon** – waterfront props >$1 m; septic-system failures = nitrogen → algae blooms → shellfish illness.
+- **Inland corn & soybean fields** – pesticide drift; farmworkers’ renal disease spikes harvest season.
+- **Rail trail conversion** – increased bike injuries; ortho surgeons love-hate it.
 
 ---
 
-## 6. Relationship-Building Cheat-Sheet
+## 6. Relationship-Building Cheat Sheet
 
-**Checklist for your first 60 days**  
-- Ride one night shift with Easton Volunteer Fire. Bring coffee, collect every business card.  
-- Sit in the back row of a Talbot County Health Dept. board meeting; ask for the inspection spreadsheet before you leave.  
-- Follow every local pastor on Facebook; DM to ask who's feeding kids this summer.  
-- Request a "media ride-along" form from Easton PD – they have one, but don't post it.  
-- Join the Mid-Shore League of Women Voters list-serve – they track every local hearing.
-
-**Public records to calendar**  
-- Restaurant inspection reports – released weekly by county health.  
-- Child-fatality review summaries – redacted but useful; MD DHMH releases annually.  
-- EMS response-time data – request by zip from MIEMSS.  
-- Civil complaints against the county – pro-se cases often reveal social-services grievances.  
-- Campaign-finance filings – poultry executives and retirees both donate big; see who funds which commissioner.
-
-**Habits that pay off**  
-- Keep a running "status unknown" doc: every sentencing, every grant deadline, every permit appeal.  
-- Photograph every public meeting agenda; OCR it that night for keyword searches.  
-- Build a simple Airtable: people, beat-tags, last-interaction date; set a 90-day nudge.  
-- Keep a waterproof notebook in your car – you will interview crab pickers in the rain.  
-- Learn the high-school sports schedule; games are the cheapest networking event in town.
+- **Coffee rule:** Offer to buy, but never promise off-record until you hear the pitch.
+- **Court clerks know everything**—bring donuts on Fridays.
+- **Night-shift nurses** are Twitter-happy; follow #NightShiftNurse for Mid-Shore tags.
+- **Volunteer firefighters** = 20-year-olds who feel ignored by media; quote them on mental health after fatal MVAs.
+- **Public defenders** will hand you sentencing memos—goldmine for foster-care backstory.
 
 ---
 
-## 7. Story Ideas Rooted in the Dataset (and the Gaps)
+## 7. Data & Docs You Should Bookmark Today
 
-1. **Sentencing Day for Kautz** – June 2024 came and went; find the docket, interview the foster family, ask whether restitution covers therapy. *(Primary sources: Talbot County Circuit Court clerk, Victim Impact statement)*
-
-2. **Where are the adolescent psych beds?** – Map the 28-day wait-list numbers from For All Seasons against the new 988 call data. *(Sources: For All Seasons, MD DHMH dashboard, parent Facebook groups)*
-
-3. **Ambulance response times on Route 50** – FOIA call logs for Queen Anne's DES; overlay with traffic-count data from SHA. *(Possible headline: "When traffic is the difference between life and death")*
-
-4. **The H-2B crab-picking crunch** – Follow one Somerset processor through the federal visa lottery; interview returning Jamaican pickers in shared housing. *(Sources: U.S. Labor Dept. H-2B disclosure, crab house owner, Jamaican liaison pastor)*
-
-5. **Retiree art economy** – quantify how much revenue the Heron Point photography show generated for Chestertown restaurants in July-August 2024. *(Sources: Heron Point gift-shop sales, downtown merchants, tourism board)*
-
-6. **Pitcher's duel as census** – use the rosters in Haufe's 4/29/25 baseball story to track who transferred into Queen Anne's, and ask whether affordable housing for teachers factored in. *(Sources: school registrar, rental listings, county housing coalition)*
-
-7. **Unfinished mourning** – Revisit Dustin Blue one year after his dad's death; explore how high-school athletic departments handle grief counsellors. *(Sources: school psychologist, athletic director, Matt Blue memorial fund)*
+- **Maryland Judiciary Case Search** – set daily alert for new Talbot, Caroline, QAC criminal filings.
+- **CMS Hospital Compare** – download CSV every quarter.
+- **MD Overdose Data Mapping** – weekly updates, county slice.
+- **Census ACS 2022 5-yr** – tract-level insurance-coverage estimates.
+- **Talbot Co. Council YouTube** – auto-transcripts are searchable; great for catching off-hand health-budget comments.
 
 ---
 
-Pick one, pitch it, and remember: on the Eastern Shore the best stories usually smell like either the Bay at low tide or chicken manure at sunrise. Get used to both, keep a spare notebook in your glovebox, and the beat will treat you well.
+## 8. Habits That Keep You Sane
+
+- **Friday 4 p.m.:** File public-records requests before the weekend—county FOIA officers answer in order received.
+- **Keep a “cop voice” notebook**—separate from your reporter notebook—for off-color jokes you can’t print but help you understand culture.
+- **Screenshot Snapchat map during big events**—geo-tags vanish after 24 hrs.
+- **Build a trauma-informed source list**—therapists willing to talk about secondary trauma in first responders; you’ll need them for the big narratives.
+
+---
+
+## 9. Story Ideas Waiting for You
+
+1. **Update on Kautz sentencing** – Did judge depart from guidelines? Call Victim Impact statement.
+2. **Track April 2024 Easton EMS overtime**—budget doc shows 38% spike; correlate with volunteer shortage.
+3. **Inside the 28-hr ER psych hold**—interview a teen stuck in limbo; sidebar on pending state “bed registry” bill.
+4. **Heat-stroke protocol at outdoor farmworker camps**—compare OSHA draft rules vs. actual shade structures.
+5. **Second Chance Act**—expungement clinic in Easton (none reported since 2022). Why so few participants?
+6. **Athletic trainers carrying Narcan**—follow up on Dustin Blue grief story; survey 10 HS teams.
+7. **Dental deserts**—only 3 Medicaid dentists in Caroline; ER visits for abscesses rising.
+8. **Climate-driven shellfish illness**—interpolate Bay temp vs. Vibrio cases; local oyster farmers’ insurance rates.
+
+---
+
+## 10. Undercovered Angles & Leads to Close
+
+- **Status of Talbot’s mobile-crisis van**—purchased with ARPA funds 2023, no update since.
+- **Hospital cyber-security**—UM Shore migrated EMR vendors in May 2024; any breaches?
+- **School-based tele-psychiatry**—pilot program at St. Michaels Middle? Verify participation numbers.
+- **Vaping in 2A middle schools**—confiscation logs; QAC has no reporting standard.
+- **Long-COVID clinic**—Hopkins ran a pop-up in Easton 2023; did it morph into chronic-fatigue referrals?
+
+---
+
+Go forth, keep your car gassed (you’ll average 110 miles/week), and remember: on the Mid-Shore, the loudest voice is usually the river at night. Listen harder and you’ll hear the stories.
