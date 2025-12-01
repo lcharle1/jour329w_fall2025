@@ -1,11 +1,23 @@
-Create an extensive and detailed narrative training guide in Markdown for an early-career reporter covering Health and public safety in Easton and the broader Eastern Shore. Use the attached source_stories.json dataset of stories as your primary source material. 
-Write in a professional, mentor, casual tone that is clear and readable, using primarily narrative paragraphs, with bullet points only when needed for checklists, source suggestions, or story-angle lists. Do not use a casual tone. The guide should function as a training guide manual introduction for someone who already understands basic reporting but does not yet know the people, institutions, issues, or context of this specific topic. 
+Create an extensive and detailed narrative training guide in Markdown for an early-career reporter covering Health and public safety in Talbot County and its municipalities. Use the attached filtered_stories.json dataset of stories as your primary source material. 
+
+Write in a professional, mentor, casual tone that is clear and readable, using primarily narrative paragraphs, with bullet points only when needed for checklists, source suggestions, or story-angle lists. Properly organize the information provided regarding issues/concerns. Make sure the text is readable and comprehensible.
+
+Do not use a casual tone. The guide should function as a training guide manual introduction for someone who already understands basic reporting but does not yet know the people, institutions, issues, or context of this specific topic. 
 Use examples from the provided stories, citing dates (month and year) and including hyperlinks, to illustrate dynamics and patterns. Focus on the future more than the past, while giving enough recent historical context to ground the reporter.
 Next, analyze the stories to identify significant themes that consistently appear in coverage. For each theme, explain its significance, key institutions, important stakeholders, competing viewpoints, and the types of situations in which it tends to surface. Use specific published stories to illustrate these patterns, clearly noting when a story was unresolved at the time (such as policy debates, lawsuits, land-use approvals, or ongoing investigations) and include a caveat that the status may have changed since publication. 
+
 After discussing the themes, write a narrative overview of the key people who appear in the dataset, explaining who they are, what roles they play, why they matter, and how they tend to appear in stories. Follow this with a narrative explanation of the main institutions (government bodies, nonprofits, schools, businesses, medical facilities, religious groups, community associations, arts organizations, etc), describing their influence, responsibilities, and typical interactions with the issue. 
-Then describe the geographic context of the beat, focusing on how the place shapes the topic across eastern Maryland. Reference specific locations from the stories and explain how geography affects the social, political, environmental, or economic dynamics relevant to the beat.
-The geographic context of this guide should encompass the relevant Maryland counties: Dorchester County, Caroline County, Kent County, Queen Anne's County, Talbot County, Prince George's County, Calvert County, Anne Arundel County, Baltimore County, Baltimore City, Howard County, Carroll County, Montgomery County, Frederick County, St. Mary's County, Charles County, Washington County, Somerset County, Allegany County, Cecil County, Worcester County, Wicomico County, Garrett County, and Harford County. And the key municipalities frequently connected to Eastern Shore coverage, including (but not limited to): Cambridge, Easton, Denton, Chestertown, Centreville, Oxford, St. Michaels, Federalsburg, Rock Hall, Queenstown, Stevensville, East New Market, Hurlock, Vienna, Greensboro, Preston, Ridgely, Trappe, Tilghman Island, and Kent Narrows. Explain what sources to build relationships with, what data or public records to track, and what habits will help them succeed on this beat.
+
+The geographic context of this guide should encompass the entirety of Talbot County and its five municipalities: Easton, Oxford, Queen Anne, St. Micheals, and Trappe. Provide context and list key people and major institutions involved and connected to Talbot County’s health and public safety beat. Reference specific locations from the stories and explain how geography affects the social, political, environmental, or economic dynamics relevant to the beat.
+
 Any story references need to be accompanied by that story’s hyperlink. Full names of individuals/stakeholders should be included. Use them when referencing a story or as examples of the people the journalist should reach out to, etc. Include specific names of infrastructure/buildings and institutions mentioned in stories. 
+
 After this, propose story ideas highlighting undercovered angles, emerging issues, and practical reporting opportunities, and for each idea, recommend sources or locations that may help the journalist pursue the story. Identify any unfinished or partial storylines in the dataset and emphasize the need to verify their current status.
+
+Remove any unnecessary HTML tags in the text. For example: <br><br>
+
+
+
+
 
 
