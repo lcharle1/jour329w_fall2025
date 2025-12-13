@@ -30,8 +30,6 @@ uv run sqlite-utils query stardem_entities.db   "SELECT * FROM stories ORDER BY 
 ```
 I am using filtered_stories.json. 
 
-
-
 # Copilot Convo:
 lcharle1: How do I edit this line of command to filter by a certain quantity: uv run sqlite-utils memory stories.db \
   "SELECT * FROM stories WHERE content LIKE '%Cambridge%'" \

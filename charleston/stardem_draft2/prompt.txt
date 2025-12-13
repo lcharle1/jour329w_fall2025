@@ -1,3 +1,5 @@
+IMPORTANT: PROVIDE DETAILED PARAGRAPH TEXT FOR EVERY SECTION AND PORTION OF THE TRAINING GUIDE 
+
 Style and Tone
 
 Create an accurate, descriptive, and detailed narrative training guide in Markdown for an early-career reporter covering the Health and public safety beat only in Talbot County and its municipalities. Use the attached filtered_stories.json dataset of stories as your primary source material. 

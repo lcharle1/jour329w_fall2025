@@ -1,4 +1,4 @@
-# Star-Democrat Draft Beat Book
+clea# Star-Democrat Draft Beat Book
 
 The goal of this assignment is to produce a draft beat book from Star-Democrat articles, building on the metadata and entity extraction work you've done in previous assignments. A beat book is a guide for reporters covering a specific topic - it introduces key people, institutions, issues, patterns, and story ideas. Your job is to experiment with different formats and approaches to create the most useful resource possible.
 
