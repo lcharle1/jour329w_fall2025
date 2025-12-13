@@ -2,6 +2,12 @@ pyproject.toml
 .python-version
 uv.lock
 
+data/star_democrat_articles_master.parquet
+data/stardem_topics_qwen
+data/stardem_topics
+
+willis/
+
 *.DS_Store
 */.DS_Store
 
