@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health & Public Safety — Pitch Deck for Reporters</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Health &amp; Public Safety Beat Guide</h1>
+      <p class="subtitle">Talbot County, Maryland — Easton · Oxford · Queen Anne · St. Michaels · Trappe</p>
+      <p class="lead">A comprehensive, pitch-deck style training guide for early-career reporters covering Health and Public Safety in eastern Maryland. Built from real local stories to introduce key themes, institutions, people, locations, and emerging story ideas.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="deck-nav">
+      <button data-slide="overview" class="active">Overview</button>
+      <button data-slide="themes">Recurring Themes</button>
+      <button data-slide="institutions">Key Institutions</button>
+      <button data-slide="people">Key People</button>
+      <button data-slide="geography">Geography</button>
+      <button data-slide="stories">Stories</button>
+      <button data-slide="ideas">Story Ideas</button>
+      <button data-slide="caveats">Caveats</button>
+    </nav>
+
+    <section id="slides">
+
+      <!-- OVERVIEW -->
+      <article id="overview" class="slide active">
+        <h2>Introduction</h2>
+        <p>This guide is intended for a journalist who understands basic reporting but is new to the Health and Public Safety beat in Talbot County. It offers an in-depth look at recurring themes, stakeholders, and institutions that shape local coverage—drawn from published Star Democrat stories.</p>
+        <h3>How to use this guide</h3>
+        <ul>
+          <li><strong>Recurring Themes</strong> — Understand the major story patterns (emergency response, public health, violent crime, fire-rescue infrastructure, etc.).</li>
+          <li><strong>Key Institutions</strong> — Learn about government bodies, nonprofits, hospitals, fire departments, and other organizations central to the beat.</li>
+          <li><strong>Key People</strong> — Access a contact-list–style roster of officials, first responders, and community figures frequently quoted or referenced.</li>
+          <li><strong>Geography</strong> — See how Talbot County's waterways, municipalities, and rural character shape stories.</li>
+          <li><strong>Story Ideas</strong> — Find underreported angles and emerging issues worth pursuing.</li>
+          <li><strong>Caveats</strong> — Note ongoing investigations and unresolved stories that require verification before follow-up reporting.</li>
+        </ul>
+        <p>Use the navigation above to move between sections. Each section includes narrative context, bullet-point checklists, and source citations with dates.</p>
+      </article>
+
+      <!-- RECURRING THEMES -->
+      <article id="themes" class="slide">
+        <h2>Recurring Themes &amp; Issues</h2>
+        <p>The dataset reveals several persistent story patterns. Each theme below is described in narrative form, with key institutions, stakeholders, competing viewpoints, and example stories cited by date.</p>
+        <div id="themesList">Loading themes...</div>
+      </article>
+
+      <!-- KEY INSTITUTIONS -->
+      <article id="institutions" class="slide">
+        <h2>Key Institutions</h2>
+        <p>The following institutions appear frequently in local Health and Public Safety coverage. Each entry describes what the organization does, who leads it, and how it connects to the beat.</p>
+        <div id="institutionsList">Loading institutions...</div>
+      </article>
+
+      <!-- KEY PEOPLE -->
+      <article id="people" class="slide">
+        <h2>Key People — Contact List</h2>
+        <p>This roster includes first and last names, roles, and contact information (where available) for officials, first responders, and community figures who are quoted, interviewed, or referenced in local stories. Reach out to them for sourcing, background, or comment.</p>
+        <div id="peopleList">Loading people...</div>
+      </article>
+
+      <!-- GEOGRAPHY -->
+      <article id="geography" class="slide">
+        <h2>Geography &amp; Locations</h2>
+        <p>Talbot County, on Maryland's Eastern Shore, is bounded by water—the Chesapeake Bay to the west, the Choptank River to the south, and smaller tributaries like Miles River and Eastern Bay. The county includes five municipalities: <strong>Easton</strong> (the county seat), <strong>Oxford</strong>, <strong>Queen Anne</strong>, <strong>St. Michaels</strong>, and <strong>Trappe</strong>. Its rural landscape, tidal waterways, and agricultural character strongly influence public-safety and health issues:</p>
+        <ul>
+          <li><strong>Water rescues</strong> — Kayakers, boaters, and swimmers regularly need assistance in areas like Broad Creek, Tilghman Island, and Miles River.</li>
+          <li><strong>Volunteer fire challenges</strong> — Long travel distances to state-level trainings and the need for local infrastructure such as the A. James Clark Emergency Services Training Campus in Easton.</li>
+          <li><strong>Heat-related health</strong> — Rural and waterfront communities may lack air conditioning; county health departments issue warnings and open cooling centers.</li>
+          <li><strong>EMS access</strong> — Shore Regional Health in Easton is the primary hospital; some trauma patients are flown to Baltimore's R Adams Cowley Shock Trauma Center.</li>
+        </ul>
+        <div id="geographyList"></div>
+      </article>
+
+      <!-- STORIES -->
+      <article id="stories" class="slide">
+        <h2>Source Stories</h2>
+        <p>Browse the dataset of published stories used to build this guide. Click any story to view full text in a new window.</p>
+        <div id="storyList">Loading stories...</div>
+      </article>
+
+      <!-- STORY IDEAS -->
+      <article id="ideas" class="slide">
+        <h2>Story Ideas — Underreported Angles &amp; Emerging Issues</h2>
+        <p>Below are proposed story ideas drawn from gaps, partial storylines, and emerging patterns in the dataset. Each includes recommended sources and locations.</p>
+        <div id="ideasList">Loading ideas...</div>
+      </article>
+
+      <!-- CAVEATS -->
+      <article id="caveats" class="slide">
+        <h2>Caveats &amp; Verification Notes</h2>
+        <p>Some stories in the dataset involve ongoing investigations, pending court cases, or unresolved policy debates. Before publishing follow-up coverage, verify current status with official sources.</p>
+        <div id="caveatsList">Loading caveats...</div>
+        <p class="footnote"><strong>General caveat:</strong> All information in this guide is drawn from published Star Democrat stories as of the dates indicated. Situations may have changed since publication. Confirm facts before use.</p>
+      </article>
+
+    </section>
+
+    <footer class="footnote">Dataset: filtered_stories3.json — Star Democrat (sample). Caveat: status may have changed since publication.</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

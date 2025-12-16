@@ -1,0 +1,69 @@
+Style and Tone
+
+Use the stories in the filtered_stories3.json from the stardem_final folder to create an accurate, descriptive, and detailed professional pitch deck to teach an early-career reporter covering the Health and Public Safety beat in eastern Maryland. Use the filtered_stories3.json file for context. 
+
+Write the guide in a professional and casual tone, direct and comprehensive, using primarily narrative paragraphs, with bullet points as needed. Bullet points are for checklists, source suggestions, story-angle lists, quick reference lists of the beat, and suggestions for future or follow-up stories. 
+
+Properly organize the information provided regarding the issue/concerns. Make sure the text is comprehensible. 
+
+Do not limit text for bullet points and paragraphs. Include all necessary and relevant information. 
+
+The guide should serve as an introduction to a training manual for someone who already understands basic reporting but does not yet know the key people/stakeholders, institutions, issues, or context of this specific topic.   
+
+
+
+Recurring themes + Issues/Concerns
+
+Analyze the stories to identify significant themes that consistently appear. For each theme, in descriptive paragraphs, explain its significance to the beat, key institutions, key people and stakeholders, competing viewpoints, and the types of situations the themes surface in. Use the published stories in the filtered_stories.json file to illustrate these patterns. 
+
+
+
+Key Institutions
+
+In descriptive paragraphs, and using the published stories from the filtered_stories.json, list in order of importance relevant and significant institutions. This includes but is not limited to government bodies (e.g., federal, local), non-profit organizations, academic institutions (e.g., K-12 schools, colleges, universities, school boards, Parent Teacher Organizations (PTO), businesses, medical facilities (e.g., American Medical Association), religious groups (e.g., All Saints’ Church, churches, mosques, temples, synagogues, Abrahamic religions, non-Abrahamic religions), community based organizations and associations, arts organizations, etc. Describe their relevancy, influence, and typical interactions with the Health and Public Safety beat and the particular issue (e.g., when mentioned in recurring theme section or other sections). 
+
+Include a description of the institution; do not be brief. Explain the work it does and who is involved in the institution. Any context to provide some background information on it. For example, For All Season, rather than just briefly mentioning it is an anti-human trafficking network, it does more than that, it is a mental health service overall. 
+
+Include specific names of infrastructure/buildings mentioned in stories. The list includes but is not limited to names and locations of museums (e.g., Maritime Museum), schools, government buildings
+
+Key People 
+
+Include first and last names of people involved in issues/concerns or related to the Health and Public Safety beat. Do not leave out their occupation and/or position. 
+
+Provide context on who they are, what roles they play, why they matter, and their connection to the Health and Public Safety beat. 
+
+Key people are typically interviewed, used as a source, referenced in the story, or have connections to the beat or an institution. 
+
+Organize the list of people as a contact list. 
+
+Geographic/ Locations
+
+The geographic context of this guide should encompass the entirety of Talbot County and its five municipalities: Easton, Oxford, Queen Anne, St. Michaels, and Trappe. Do not reference any other locations outside of Talbot County and its municipalities. No other reference to other counties or municipalities should be included. 
+Geographic context includes but is not limited to landmarks, bodies of water (e.g., Chesapeake Bay, Miles River, Eastern Bay, Choptank River), natural landmarks (e.g., Tilghman Island, Chesapeake Bay), and historical landmarks (e.g., Maritime Museum), cities and towns in Talboy county, etc. 
+
+In descriptive paragraphs, explain specific locations from the stories and explain how geography affects the social, political, environmental, or economic dynamics relevant to the Health and Public Safety beat. 
+
+Key Components to have
+
+Use examples from the provided stories, citing dates (month and year) to illustrate dynamics and patterns. 
+
+Include key statistics relevant to the Health and Public Safety beat, mentioned in the story, to support the text. This includes but is not limited to money, percentages, quantities of an objective - living or not - relevant to the beat. 
+
+Focus on the future more than the past, while giving enough recent historical context to ground the reporter. 
+
+After this, propose story ideas highlighting underreported angles, emerging issues, and practical reporting opportunities, and
+
+Full names of individuals/stakeholders involves, infrastructure/buildings should be included. Use them when referencing a story or as examples of the people the journalist should reach out to.
+
+At the end of the training guide, propose story ideas that highlight underrepresented angles and emerging issues; recommend sources or locations to help the journalist pursue the story. 
+
+Identify any unfinished or partial storylines in the dataset and emphasize the need to verify their current status. 
+
+Caveats
+
+Write a caveat when a story is unresolved at the time (e.g., policy debates, lawsuits, land-use approvals, ongoing investigations) and include a caveat that the status may have changed since publication.
+
+Include a caveat for any information mentioned that is not confirmed from the published stories in the filtered_stories.json regarding the Health and Public Safety beat. 
+
+
+

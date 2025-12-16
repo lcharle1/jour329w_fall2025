@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health & Public Safety — Pitch Deck for Reporters</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Health & Public Safety — Eastern Maryland</h1>
+      <p class="lead">A pitch-deck style training site for early-career reporters. Interactive micro-lessons, quizzes, and a story-driven beat guide based on local reporting.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="deck-nav">
+      <button data-slide="overview" class="active">Overview</button>
+      <button data-slide="themes">Recurring Themes</button>
+      <button data-slide="institutions">Key Institutions</button>
+      <button data-slide="people">Key People</button>
+      <button data-slide="stories">Stories</button>
+      <button data-slide="micro">Micro-learning & Quiz</button>
+      <button data-slide="ideas">Story Ideas</button>
+      <div class="score">Points: <span id="points">0</span> • Streak: <span id="streak">0</span></div>
+    </nav>
+
+    <section id="slides">
+      <article id="overview" class="slide active">
+        <h2>Introduction</h2>
+        <p>This guide uses published reporting (sampled) to orient you to covering Health & Public Safety in Talbot County (Easton, Oxford, Queen Anne, St. Michaels, Trappe). It highlights common themes, institutions, people, data, and concrete story leads. Use the micro-lessons to practice and earn points.</p>
+        <h3>How to use this site</h3>
+        <ul>
+          <li>Browse slides for context and interview targets.</li>
+          <li>Open 'Stories' to read local stories and jump to originals.</li>
+          <li>Use Micro-learning for quick quizzes and to build a streak.</li>
+        </ul>
+      </article>
+
+      <article id="themes" class="slide">
+        <h2>Recurring Themes</h2>
+        <div id="themesList">Loading themes...</div>
+      </article>
+
+      <article id="institutions" class="slide">
+        <h2>Key Institutions</h2>
+        <div id="institutionsList">Loading institutions...</div>
+      </article>
+
+      <article id="people" class="slide">
+        <h2>Key People / Contact List</h2>
+        <div id="peopleList">Loading people...</div>
+      </article>
+
+      <article id="stories" class="slide">
+        <h2>Source Stories</h2>
+        <div id="storyList">Loading stories...</div>
+      </article>
+
+      <article id="micro" class="slide">
+        <h2>Micro-learning & Quiz</h2>
+        <div id="microCard">Loading micro-lessons...</div>
+        <div id="quizArea"></div>
+      </article>
+
+      <article id="ideas" class="slide">
+        <h2>Underreported Angles & Story Ideas</h2>
+        <div id="ideasList">Loading ideas...</div>
+      </article>
+    </section>
+
+    <footer class="footnote">Local dataset: filtered_stories3.json — source: Star Democrat (sample). Caveat: status may have changed since publication.</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health & Public Safety — Pitch Deck</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Health & Public Safety — Talbot County (Pitch Deck)</h1>
+    <div class="controls">
+      <label for="lang">Language:</label>
+      <select id="lang"><option value="en">English</option><option value="es">Español</option></select>
+      <button id="modeToggle">Night</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="searchPanel">
+      <input id="search" placeholder="Search pitch deck (words or names)" />
+      <button id="searchBtn">Search</button>
+    </section>
+
+    <section id="deck">
+      <nav id="deckNav">
+        <button data-view="overview" class="active">Overview</button>
+        <button data-view="dashboard">Dashboard</button>
+        <button data-view="people">Key People</button>
+        <button data-view="institutions">Key Institutions</button>
+        <button data-view="locations">Key Locations</button>
+      </nav>
+      <article id="content">
+        <div id="overviewView" class="view">
+          <h2>Overview & Micro-lessons</h2>
+          <div id="microLessons"></div>
+          <h3>Recurring Themes</h3>
+          <div id="themes"></div>
+        </div>
+
+        <div id="dashboardView" class="view hidden">
+          <h2>Dashboard</h2>
+          <div id="stats"></div>
+          <canvas id="wordcloud" width="600" height="300"></canvas>
+          <p class="hint">Click a word to jump to its explanation in the deck.</p>
+        </div>
+
+        <div id="peopleView" class="view hidden">
+          <h2>Key People</h2>
+          <ul id="peopleList"></ul>
+        </div>
+
+        <div id="institutionsView" class="view hidden">
+          <h2>Key Institutions</h2>
+          <ul id="institutionsList"></ul>
+        </div>
+
+        <div id="locationsView" class="view hidden">
+          <h2>Key Locations</h2>
+          <ul id="locationsList"></ul>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div id="errorScreen" class="hidden">
+    <div class="errorBox">
+      <h2>Error</h2>
+      <p id="errorMsg">An unexpected error occurred.</p>
+      <button id="errorClose">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    <small>Local draft site — data source: filtered_stories3.json</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

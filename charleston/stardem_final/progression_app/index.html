@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Talbot Health & Public Safety — Progression App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Talbot County — Health & Public Safety Training</h1>
+    <p class="subtitle">Micro-lessons, quizzes, and progression for early-career reporters</p>
+  </header>
+
+  <main>
+    <section id="setup">
+      <label>Reporter name: <input id="reporterName" placeholder="Your name"/></label>
+      <div class="controls">
+        <button id="startBtn">Start Session</button>
+        <select id="levelSelect">
+          <option value="1">Level 1 — Read & Know (Foundations)</option>
+          <option value="2">Level 2 — Quick Quizzes (People & Stats)</option>
+          <option value="3">Level 3 — Reporting Prompts (Story Ideas)</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="session" class="hidden">
+      <div id="statusBar">
+        <span id="points">Points: 0</span>
+        <span id="streak">Streak: 0</span>
+      </div>
+
+      <article id="lesson">
+        <h2 id="lessonTitle">Loading...</h2>
+        <p id="lessonText"></p>
+        <div id="extra"></div>
+      </article>
+
+      <div id="quiz" class="hidden">
+        <div id="question"></div>
+        <div id="choices"></div>
+      </div>
+
+      <div class="actions">
+        <button id="nextBtn">Next</button>
+        <button id="saveBtn">Save Progress</button>
+      </div>
+    </section>
+
+    <section id="help">
+      <h3>How it works</h3>
+      <ul>
+        <li>Level 1 shows short micro-lessons drawn from local stories.</li>
+        <li>Level 2 gives quick multiple-choice quizzes about names, places, and stats.</li>
+        <li>Level 3 suggests reporting angles and follow-ups from unfinished storylines.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>Data source: filtered_stories.json (local dataset)</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
