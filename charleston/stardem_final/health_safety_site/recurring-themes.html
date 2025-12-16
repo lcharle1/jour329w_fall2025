@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recurring Themes & Concerns | Health & Public Safety Beat</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .word-cloud-container {
+            background: #2c2416;
+            border: 2px solid #2c2416;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .word-cloud-title {
+            font-family: 'Special Elite', 'Courier New', monospace;
+            color: #f4f1e8;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .word-cloud-title span {
+            font-family: 'Courier Prime', monospace;
+            opacity: 0.6;
+            font-size: 0.8rem;
+            display: block;
+            margin-top: 10px;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+        .word-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px 15px;
+            max-width: 800px;
+            padding: 20px;
+        }
+        .word-cloud a {
+            font-family: 'Special Elite', 'Courier New', monospace;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+        .word-cloud a:hover {
+            text-decoration: underline;
+            background: rgba(244,241,232,0.1);
+        }
+        /* Size classes based on frequency - typewriter style */
+        .word-xl { font-size: 2rem; font-weight: 400; }
+        .word-lg { font-size: 1.6rem; font-weight: 400; }
+        .word-md { font-size: 1.25rem; font-weight: 400; }
+        .word-sm { font-size: 1rem; font-weight: 400; }
+        .word-xs { font-size: 0.85rem; font-weight: 400; }
+        /* Vintage typewriter color palette */
+        .color-fire { color: #d4a89a; }
+        .color-health { color: #a8c4b8; }
+        .color-crime { color: #d4c89a; }
+        .color-traffic { color: #c4a888; }
+        .color-environment { color: #9ab89a; }
+        .color-community { color: #b8a8c4; }
+        .color-juvenile { color: #a8b8c4; }
+        
+        .cloud-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(244,241,232,0.3);
+        }
+        .legend-item {
+            font-family: 'Courier Prime', monospace;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: rgba(244,241,232,0.6);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border: 1px solid rgba(244,241,232,0.3);
+        }
+        .legend-dot.fire { background: #d4a89a; }
+        .legend-dot.health { background: #a8c4b8; }
+        .legend-dot.crime { background: #d4c89a; }
+        .legend-dot.traffic { background: #c4a888; }
+        .legend-dot.environment { background: #9ab89a; }
+        .legend-dot.community { background: #b8a8c4; }
+        
+        .frequency-note {
+            font-family: 'Courier Prime', monospace;
+            color: rgba(244,241,232,0.4);
+            font-size: 0.7rem;
+            margin-top: 15px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <a href="index.html" class="home-link">🏠 Home</a>
+            <a href="recurring-themes.html">📊 Themes</a>
+            <a href="key-people.html">👥 People</a>
+            <a href="key-institutions.html">🏢 Institutions</a>
+            <a href="key-locations.html">📍 Locations</a>
+            <a href="statistics.html">📈 Statistics</a>
+            <a href="quick-contacts.html">📞 Contacts</a>
+            <a href="reporting-tips.html">📋 Tips</a>
+        </nav>
+        
+        <div class="section">
+            <div class="section-header">
+                <h2>📊 Recurring Themes & Concerns</h2>
+                <p>Key issues affecting health and public safety across the Mid-Shore region</p>
+            </div>
+            <div class="section-content">
+                
+                <!-- Word Cloud Visualization -->
+                <div class="word-cloud-container">
+                    <h3 class="word-cloud-title">📈 Theme Frequency Word Cloud
+                        <span>Size reflects how often each topic appears in coverage</span>
+                    </h3>
+                    <div class="word-cloud">
+                        <!-- XL - Most frequent (15+ stories) -->
+                        <a href="#fire" class="word-xl color-fire">Fire Services</a>
+                        <a href="#crime" class="word-xl color-crime">Violent Crime</a>
+                        
+                        <!-- LG - Very frequent (10-14 stories) -->
+                        <a href="#healthcare" class="word-lg color-health">Healthcare Access</a>
+                        <a href="#courts" class="word-lg color-crime">Court Sentencing</a>
+                        <a href="#fundraising" class="word-lg color-fire">Emergency Fundraising</a>
+                        
+                        <!-- MD - Frequent (6-9 stories) -->
+                        <a href="#traffic" class="word-md color-traffic">Fatal Crashes</a>
+                        <a href="#shootings" class="word-md color-crime">Shootings</a>
+                        <a href="#hospice" class="word-md color-health">Hospice Care</a>
+                        <a href="#assault" class="word-md color-crime">Assault</a>
+                        <a href="#rescue" class="word-md color-fire">Water Rescue</a>
+                        <a href="#cancer" class="word-md color-health">Cancer Treatment</a>
+                        
+                        <!-- SM - Moderate (3-5 stories) -->
+                        <a href="#juvenile" class="word-sm color-crime">Juvenile Crime</a>
+                        <a href="#veterans" class="word-sm color-community">Veterans Support</a>
+                        <a href="#vaccines" class="word-sm color-health">Vaccinations</a>
+                        <a href="#birdflu" class="word-sm color-environment">Bird Flu</a>
+                        <a href="#heat" class="word-sm color-environment">Heat Waves</a>
+                        <a href="#training" class="word-sm color-fire">First Responder Training</a>
+                        <a href="#domestic" class="word-sm color-crime">Domestic Violence</a>
+                        <a href="#detention" class="word-sm color-crime">Detention Center</a>
+                        <a href="#caregivers" class="word-sm color-community">Caregiver Support</a>
+                        
+                        <!-- XS - Less frequent (1-2 stories) -->
+                        <a href="#arson" class="word-xs color-fire">Arson</a>
+                        <a href="#drowning" class="word-xs color-traffic">Drowning</a>
+                        <a href="#earthquake" class="word-xs color-environment">Earthquake</a>
+                        <a href="#std" class="word-xs color-health">STD Prevention</a>
+                        <a href="#rare" class="word-xs color-health">Rare Diseases</a>
+                        <a href="#medicaid" class="word-xs color-health">Medicaid</a>
+                        <a href="#threats" class="word-xs color-crime">School Threats</a>
+                        <a href="#coldcase" class="word-xs color-crime">Cold Cases</a>
+                        <a href="#vandalism" class="word-xs color-crime">Vandalism</a>
+                        <a href="#carjacking" class="word-xs color-crime">Carjacking</a>
+                    </div>
+                    
+                    <div class="cloud-legend">
+                        <div class="legend-item"><span class="legend-dot fire"></span> Fire/Emergency</div>
+                        <div class="legend-item"><span class="legend-dot health"></span> Healthcare</div>
+                        <div class="legend-item"><span class="legend-dot crime"></span> Crime/Justice</div>
+                        <div class="legend-item"><span class="legend-dot traffic"></span> Traffic Safety</div>
+                        <div class="legend-item"><span class="legend-dot environment"></span> Environment</div>
+                        <div class="legend-item"><span class="legend-dot community"></span> Community</div>
+                    </div>
+                    
+                    <p class="frequency-note">Based on analysis of 70+ stories from Star Democrat (2023-2025)</p>
+                </div>
+                
+                <div class="theme-card" id="fire">
+                    <h3>🚒 Emergency Response & Fire Services</h3>
+                    <p>Volunteer fire departments across the Mid-Shore face significant challenges including aging infrastructure, recruitment struggles, and funding needs. Key issues include:</p>
+                    <ul>
+                        <li><strong>Infrastructure:</strong> The Trappe Volunteer Fire Company is raising $6 million for reconstruction of the county's oldest firehouse, which dates to 1951</li>
+                        <li><strong>Training Facilities:</strong> The A. James Clark Emergency Services Training Campus in Easton will provide state-of-the-art training for firefighters, police, and EMS workers</li>
+                        <li><strong>Recruitment Crisis:</strong> Fire departments struggle to attract and retain volunteer members, with new Fire Chief J.R. Dobson making recruitment his top priority</li>
+                        <li><strong>Water Rescues:</strong> Natural Resources Police regularly conduct rescues on the Chesapeake Bay using thermal imaging technology</li>
+                        <li><strong>Community Support:</strong> Departments rely heavily on community donations, raffles, and fundraisers to maintain operations</li>
+                    </ul>
+                </div>
+                
+                <div class="theme-card" id="healthcare">
+                    <h3>🏥 Healthcare Access & Public Health</h3>
+                    <p>Rural healthcare challenges and public health initiatives are ongoing concerns in the five-county Mid-Shore area:</p>
+                    <ul>
+                        <li><strong>Breast Cancer Care:</strong> The Clark Comprehensive Breast Center delivered 137 new diagnoses and 12,000+ imaging studies in 2025</li>
+                        <li><strong>Vision Health:</strong> The Chesapeake Bay Sight Foundation raises funds for eye disease research at Johns Hopkins' Wilmer Eye Institute</li>
+                        <li><strong>Rare Diseases:</strong> Local families cope with conditions like Fibrodysplasia Ossificans Progressive (FOP), affecting one in a million people</li>
+                        <li><strong>Vaccination Clinics:</strong> County health departments provide free flu and COVID-19 vaccines at regular intervals</li>
+                        <li><strong>Medicaid Concerns:</strong> Rural hospitals face financial vulnerability from potential Medicaid cuts, with no VA hospital on the Eastern Shore</li>
+                        <li><strong>Mental Health Support:</strong> Organizations like Compass Regional Hospice and A Mother's Rest provide critical support services</li>
+                        <li><strong>STD Prevention:</strong> Health departments work with schools on condom availability programs to combat rising STD rates among youth</li>
+                    </ul>
+                </div>
+                
+                <div class="theme-card">
+                    <h3>⚖️ Crime & Criminal Justice</h3>
+                    <p>Violent crime and criminal justice issues remain significant concerns across the region:</p>
+                    <ul>
+                        <li><strong>Gun Violence:</strong> Multiple shooting incidents in Easton, Cambridge, and Trappe have resulted in deaths and arrests</li>
+                        <li><strong>Domestic Violence:</strong> Cases involving intimate partner violence and family disputes have led to serious injuries and deaths</li>
+                        <li><strong>Sexual Offenses:</strong> Courts have sentenced individuals for sex crimes, including offenses against minors</li>
+                        <li><strong>Cold Cases:</strong> DNA technology has helped solve decades-old cases, including a 1979 murder</li>
+                        <li><strong>Juvenile Crime:</strong> Teens face charges for assaulting school staff and vandalism of cemeteries</li>
+                        <li><strong>Regional Detention:</strong> Caroline, Queen Anne's, and Kent counties are negotiating a joint 388-bed detention facility</li>
+                    </ul>
+                </div>
+                
+                <div class="theme-card">
+                    <h3>🚗 Traffic Safety & Accidents</h3>
+                    <p>Road safety remains a persistent issue on Mid-Shore roadways:</p>
+                    <ul>
+                        <li><strong>Fatal Crashes:</strong> Multiple fatal accidents have occurred on Route 50 and rural roads, often involving high speeds</li>
+                        <li><strong>Distracted Driving:</strong> Community members raise awareness about distracted driving after serious injuries</li>
+                        <li><strong>Senior Drivers:</strong> Concerns about impatient driving behavior affecting elderly motorists on narrow, winding roads</li>
+                        <li><strong>Road Conditions:</strong> Wet conditions, lack of shoulders, and narrow lanes contribute to accidents</li>
+                    </ul>
+                </div>
+                
+                <div class="theme-card">
+                    <h3>🌡️ Environmental & Natural Hazards</h3>
+                    <p>Weather events and environmental concerns impact public safety:</p>
+                    <ul>
+                        <li><strong>Heat Waves:</strong> Summer temperatures reaching upper 90s pose risks, especially for vulnerable populations</li>
+                        <li><strong>Bird Flu Outbreaks:</strong> Four chicken flocks on Maryland's Eastern Shore tested positive for H5N1 avian flu</li>
+                        <li><strong>Earthquake Impacts:</strong> The 2024 New Jersey earthquake was felt across the Mid-Shore region</li>
+                        <li><strong>Drowning Incidents:</strong> Tragic drowning deaths of children highlight water safety concerns</li>
+                        <li><strong>Field Fires:</strong> Wheat harvesting season brings increased risk of agricultural fires</li>
+                    </ul>
+                </div>
+                
+                <div class="theme-card">
+                    <h3>🎗️ Caregiver Support & Special Needs</h3>
+                    <p>Support services for caregivers and individuals with special needs are critical community resources:</p>
+                    <ul>
+                        <li><strong>Respite Programs:</strong> A Mother's Rest provides weekend retreats for caregivers of children with special needs</li>
+                        <li><strong>Veterans Support:</strong> Organizations provide fishing trips and therapeutic activities for disabled veterans</li>
+                        <li><strong>Hospice Care:</strong> Compass Regional Hospice serves Queen Anne's, Kent, and Caroline counties with grief support</li>
+                        <li><strong>Organ Donation:</strong> Families campaign for kidney donors through the National Kidney Registry</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+        <footer>
+            <p>📰 Data sourced from Star Democrat (Easton, MD) coverage 2023-2025</p>
+            <p><a href="index.html">← Back to Home</a></p>
+        </footer>
+    </div>
+</body>
+</html>
